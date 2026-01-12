@@ -1,0 +1,17 @@
+<!-- item will be appended to this layout -->
+<div id="messages">
+    <div id="log" class="sl__chat__layout">
+    </div>
+</div>
+
+<!-- chat item -->
+<script type="text/template" id="chatlist_item">
+    <div class="message" data-from="{from}" data-id="{messageId}">
+        <div class="meta">
+            <div class="name">{from}</div>
+            <div class="promotion"></div>
+        </div>
+
+        <div class="content">{message}</div>
+    </div>
+</script>

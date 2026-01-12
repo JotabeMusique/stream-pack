@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100dvh;
+
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  font-family: var(--text-font-family), sans-serif;
+  background-color: var(--color-neutral);
+
+  --text-font-family: 'Hanken Grotesk', sans-serif;
+  --display-font-family: 'DM Serif Display', sans-serif;
+  --glass: rgba(0, 0, 0, 0.1);
+
+  --color-text: #222222;
+  --color-neutral: #edd2a6;
+  --color-accent: #faedd6ff;
+  --color-background: #ffffff;
+  --color-primary: #370f39;
+  --color-suffix: #777777;
+  overflow: auto;
+}
+
+* { 
+  box-sizing: border-box;
+}
+
+header, footer {
+  position: fixed;
+  width: 100%;
+  height: 40px;
+  padding: 8px;
+  flex-grow: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(8px);
+  background: var(--glass);
+}
+
+header {
+  top: 0;
+  left: 0;
+}
+
+footer {
+  bottom: 0;
+  left: 0;
+}
+
+.btn {
+  display: inline-block;
+  height: 24px;
+  line-height: 24px;
+  min-width: 24px;
+  padding: 0 4px;
+  vertical-align: middle;
+  border-radius: 0;
+  border: 0;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn--neutral,
+.btn--inactive {
+  background: var(--color-accent);
+  color: var(--color-text);
+}
+.btn--neutral:hover,
+.btn--inactive:hover {
+  background: var(--color-text);
+  color: var(--color-accent);
+}
+
+.btn--danger {
+  background: #990036;
+  color: white;
+}
+.btn--danger:hover {
+  background: #cc0047;
+  color: white;
+}
+
+.btn--success {
+  background: #00994d;
+  color: white;
+}
+.btn--success:hover {
+  background: #00c161;
+  color: white;
+}
+
+.btn--primary,
+.btn--active {
+  background: #0081cc;
+  color: white;
+}
+
+.btn--primary:hover,
+.btn--active:hover {
+  background: #279ee3;
+  color: white;
+}
+
+.btn-group {
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+}
+
+input {
+  height: 24px;
+  line-height: 24px;
+  vertical-align: middle;
+  flex-grow: 1;
+}
+
+.list {
+  flex-grow: 1;
+  padding: 4px;
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  padding-bottom: 48px;
+  padding-top: 48px;
+}
+
+.listItem {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  width: 100%;
+  align-items: center;
+
+}
+
+.listItem > * {
+  flex-shrink: 0;
+}
+
+.itemContent {
+  background: var(--color-accent);
+  flex-grow: 1;
+  flex-shrink: 1;
+  padding: 4px;
+  border-radius: 6px;
+}
+
+.itemContent > div {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.data-category {
+  background: var(--category-background, #222);
+  color: var(--category-text, #fff);
+  padding: 0 8px;
+  border-radius: 4px;
+  font-family: 'DM Serif Display', serif;
+  font-weight: bold;
+  max-width: 7em;
+  overflow: hidden;
+}
+
+.data-category:empty {
+  background: red !important;
+  color: white !important;
+  max-width: none;
+}
+
+.data-category:empty::after {
+  content: "⚠ PAS DE CATÉGORIE ⚠";
+}
+
+.data-title {
+  border: 1px solid #777;
+  padding: 0 8px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.data-subtitle {
+  vertical-align: middle;
+}
+
+.data-suffix {
+  display: inline-block;
+  font-style: italic;
+  margin-left: auto;
+  color: var(--color-suffix);
+}
+
+.listItem.--current .itemContent {
+  background: var(--color-background);
+  box-shadow:  0 0 0 4px var(--category-background, #279ee3);
+}
+
+/* SPECIFIC ELEMENTS */
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#updatingIcon {
+  width: 16px;
+  height: 16px;
+  margin: 8px;
+  animation: spin 3s linear infinite;
+  display: none;
+  vertical-align: middle;
+}
+
+#updatingIcon.--updating {
+  display: inline-block;
+}
+
+#currentTitle {
+  flex-grow: 1;
+  text-align: center;
+  font-size: 12px;
+  padding: 0 4px;
+}
+
+#currentTitle.--error {
+  font-size: 16px;
+  color: #c80000;
+  font-weight: bold;
+}
+
+#newTitle {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+#nextTitleBtn {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+#addTitleBtn {
+  display: inline-block;
+}
+
+#editTitleBtn {
+  display: none;
+}
+
+#cancelEditTitleBtn {
+  display: none;
+}
+
+#newTitle.--editing #addTitleBtn {
+  display: none;
+}
+
+#newTitle.--editing #editTitleBtn {
+  display: inline-block;
+}
+
+#newTitle.--editing #cancelEditTitleBtn {
+  display: inline-block;
+}

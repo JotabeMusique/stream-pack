@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jotabê - Stream pack</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="./main.ts"></script>
+  </head>
+  <body>
+    <div class="content">
+      <h1>Jotabê's Stream Pack</h1>
+
+      <a class="btn" href="./portfolio/index.html">Portfolio</a>
+      <a class="btn" href="./chat/mock">Chat (mock)</a>
+      <a class="btn" href="./overlay/mock">Overlay (mock)</a>
+      <a class="btn btn-alt" href="https://www.behance.net/gallery/241029143/Jotabe-DA-Stream-Pack"><img src="./assets/behance.svg" /> Behance</a>
+      <a class="btn btn-alt" href="https://github.com/jotabemusique/stream-pack"><img src="./assets/github.svg" /> Github</a>
+
+      <h2>Browser Sources</h2>
+
+      <a class="btn btn-twitch" href="" id="login">
+        <img src="./assets/twitch.svg" />
+        Login With Twitch
+      </a>
+
+      <label>
+        <span>ClientId:</span>
+        <input
+          id="auth_client_id"
+          type="text"
+          placeholder="Custom Client Id"
+        />
+      </label>
+
+      <p style="font-size: 0.75em;">NOTE: Twitch App must redirect to <span id="redirect_uri"></span></p>
+
+      <label>
+        <span>Access Token: </span>
+        <input id="auth_access_token" type="text" placeholder="Access Token will be here..." disabled /></label>
+      <label>
+        <span>OVERLAY Browser Source:</span>
+        <input id="source_overlay_url" type="text" placeholder="browser source url..." />
+      </label>
+      <label>
+        <span>MUSIC Browser Source:</span>
+        <input id="source_music_url" type="text" placeholder="browser source url..." />
+      </label>
+      <label>
+        <span>DOCK Stream Title:</span>
+        <input id="dock_streamtitle_url" type="text" placeholder="dock url..." />
+      </label>
+
+      <h2>Color scheme</h2>
+
+      <section id="colorschemes">
+        <ul class="colorscheme"></ul>
+      </section>
+    </div>
+
+    <template id="color">
+      <li class="color">
+        <div class="colorScheme">colorScheme</div>
+        <div class="colorName">colorName</div>
+        <div class="colorPreview">textHex</div>
+        <div class="colorHex">backgroundHex</div>
+      </li>
+    </template>
+
+    <script type="module">
+      import colorschemes from './colorschemes.json';
+
+      const $colorschemesSection = document.querySelector("#colorschemes");
+      const $colorschemeList = document.querySelector("ul.colorscheme");
+      const templateColor = document.querySelector("#color");
+      const defaultCS = colorschemes['default'];
+      
+      Object.keys(colorschemes).forEach((colorschemeName) => {
+        Object.keys(colorschemes[colorschemeName]).forEach((colorName) => {
+            const $color = document.importNode(templateColor.content, true);
+            const $colorScheme = $color.querySelector('.colorScheme');
+            $colorScheme.textContent = colorschemeName;
+            const $colorName = $color.querySelector('.colorName');
+            $colorName.textContent = colorName;
+            const $colorPreview = $color.querySelector('.colorPreview');
+            $colorPreview.textContent = colorschemes[colorschemeName][colorName].text;
+            $colorPreview.style.background = colorschemes[colorschemeName][colorName].background;
+            $colorPreview.style.color = colorschemes[colorschemeName][colorName].text;
+            const $colorHex = $color.querySelector('.colorHex');
+            $colorHex.textContent = colorschemes[colorschemeName][colorName].background;
+            $colorHex.style.color = colorschemes[colorschemeName][colorName].background;
+            $colorHex.style.background = colorschemes[colorschemeName][colorName].text;
+            $colorschemeList.appendChild($color);
+        });
+      });
+  </script>
+  </body>
+</html>

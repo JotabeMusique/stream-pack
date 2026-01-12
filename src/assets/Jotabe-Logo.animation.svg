@@ -1,0 +1,706 @@
+<svg id="jotabe-logo" version="1.1" viewBox="0 0 1200 480" xmlns="http://www.w3.org/2000/svg"
+  xmlns:svg="http://www.w3.org/2000/svg">
+  <style>
+    svg {
+      --stroke-animation-timing-function: ease-in-out;
+      --stroke-animation-duration: 0.5s;
+      --stroke-animation-base-duration: 0.5s;
+      --stroke-animation-delay: 0.5s;
+      --contract-animation-duration: 0.5s;
+      --contract-animation-delay: calc(var(--stroke-animation-duration) * 10);
+      --contract-animation-timing-function: cubic-bezier(0.66, 0, 0.5, 1.2);
+      --show-cut-animation-duration: 0.75s;
+      --show-cut-animation-delay: calc(var(--contract-animation-delay) + var(--contract-animation-duration) + 0.5s);
+      --show-cut-animation-timing-function: ease;
+      --reveal-text-animation-duration: 2s;
+      --reveal-text-animation-delay: calc(var(--show-cut-animation-delay));
+      --reveal-text-animation-timing-function: linear;
+      --fade-bottom-animation-duration: 0.3s;
+      --fade-bottom-animation-delay: calc(var(--reveal-text-animation-delay) + 4s);
+      --fade-bottom-animation-timing-function: ease-in;
+      --open-piano-animation-duration: 1s;
+      --open-piano-animation-delay: calc(var(--fade-bottom-animation-delay) + var(--fade-bottom-animation-duration));
+      --open-piano-animation-timing-function: linear;
+      --hide-text-animation-duration: 1s;
+      --hide-text-animation-delay: calc(var(--fade-bottom-animation-delay) + var(--fade-bottom-animation-duration) + 0.5s);
+      --hide-text-animation-timing-function: ease;
+      --hide-cut-animation-duration: 1s;
+      --hide-cut-animation-delay: calc(var(--open-piano-animation-delay) + var(--open-piano-animation-duration));
+      --hide-cut-animation-timing-function: ease;
+    }
+
+    #Jotabe-parts,
+    #JB-cut-line,
+    #JB-cut-text {
+      fill: white;
+    }
+
+    /** Stroke Animation **/
+
+    @keyframes draw-stroke {
+      0% {
+        stroke-dashoffset: var(--line-length);
+        stroke-dasharray: var(--line-length);
+      }
+
+      100% {
+        stroke-dashoffset: 0;
+        stroke-dasharray: var(--line-length);
+      }
+    }
+
+    @keyframes draw-stroke-pen {
+      0% {
+        stroke-dashoffset: calc(-1* var(--line-length));
+        stroke-dasharray:  1px calc(var(--line-length));
+      }
+
+      100% {
+        stroke-dashoffset:  calc(-1* var(--line-length) - var(--line-length));
+        stroke-dasharray:  1px calc(var(--line-length));
+      }
+    }
+
+    .stroke-mask {
+      stroke: white;
+      animation: draw-stroke var(--stroke-animation-duration, var(--stroke-animation-base-duration)) var(--stroke-animation-timing-function) calc(var(--stroke-animation-delay) * var(--stroke-animation-delay-offset)) both;
+    }
+
+    #letter-j-01-maskpath {
+      --line-length: 432px;
+      --stroke-animation-duration: calc(var(--stroke-animation-base-duration) * 1.9);
+      --stroke-animation-delay-offset: 0;
+    }
+
+    #letter-j-02-maskpath {
+      --line-length: 395px;
+      --stroke-animation-delay-offset: 1.5;
+    }
+
+    #letter-j-03-maskpath {
+      --line-length: 264px;
+      --stroke-animation-delay-offset: 2.3;
+    }
+
+    #letters-ota-01-maskpath {
+      --line-length: 520px;
+      --stroke-animation-delay-offset: 3;
+    }
+
+    #letters-ota-02-maskpath {
+      --line-length: 374px;
+      --stroke-animation-duration: calc(var(--stroke-animation-base-duration) * 1.25);
+      --stroke-animation-delay-offset: 4;
+    }
+
+    #letters-ota-03-maskpath {
+      --line-length: 540px;
+      --stroke-animation-delay-offset: 3.85;
+    }
+
+    #letters-ota-04-maskpath {
+      --line-length: 254px;
+      --stroke-animation-delay-offset: 4.5;
+    }
+
+    #letter-b-01-maskpath {
+      --line-length: 386px;
+      --stroke-animation-delay-offset: 5;
+    }
+
+    #letter-b-02-maskpath {
+      --line-length: 236px;
+      --stroke-animation-delay-offset: 5.5;
+    }
+
+    #letter-b-03-maskpath {
+      --line-length: 344px;
+      --stroke-animation-delay-offset: 6.5;
+    }
+
+    #letter-e-01-maskpath {
+      --line-length: 140px;
+      --stroke-animation-duration: calc(var(--stroke-animation-base-duration) * 0.4);
+      --stroke-animation-delay-offset: 7;
+    }
+
+    #letter-e-02-maskpath {
+      --line-length: 360px;
+      --stroke-animation-delay-offset: 7.35;
+    }
+
+    #letter-e-03-maskpath {
+      --line-length: 130px;
+      --stroke-animation-timing-function: cubic-bezier(0.15, 0.65, 0.75, 0.2);
+      --stroke-animation-delay-offset: 8;
+    }
+
+  /** Contract Animation **/
+
+  @keyframes move-letter-j {
+    0% {
+      transform: translate(128px,48px);
+    }
+
+    100% {
+      transform: translate(432px,48px);
+    }
+  }
+
+  #Jotabe-letter-j {
+    animation: move-letter-j var(--contract-animation-duration) var(--contract-animation-timing-function) var(--contract-animation-delay) both;
+  }
+
+  @keyframes move-letter-b {
+    0% {
+      transform: translate(560px,48px);
+    }
+
+    100% {
+      transform: translate(432px,48px);
+    }
+  }
+
+  #Jotabe-letter-b {
+    animation: move-letter-b var(--contract-animation-duration) var(--contract-animation-timing-function) var(--contract-animation-delay) both;
+  }
+
+  @keyframes move-letters-ota {
+    0% {
+      transform: translate(304px,48px);
+    }
+
+    100% {
+      transform: translate(608px,48px);
+    }
+  }
+
+  @keyframes contract-letters-ota-mask {
+    0% {
+      transform: scale(1, 1);
+    }
+
+    100% {
+      transform: scale(0, 1);
+    }
+  }
+
+  #Jotabe-letters-ota {
+    animation: move-letters-ota var(--contract-animation-duration) var(--contract-animation-timing-function) var(--contract-animation-delay) both;
+  }
+
+  #letters-ota-mask path {
+    transform-origin: 304px 48px;
+    animation-composition: add;
+    animation: contract-letters-ota-mask var(--contract-animation-duration) var(--contract-animation-timing-function) var(--contract-animation-delay) both;
+  }
+
+
+  @keyframes move-letter-e {
+    0% {
+      transform: translate(736px,48px);
+    }
+
+    100% {
+      transform: translate(368px,48px);
+    }
+  }
+
+  @keyframes move-letter-e-mask {
+    0% {
+      transform: translate(-736px,-48px);
+    }
+
+    100% {
+      transform: translate(-496px,-48px);
+    }
+  }
+
+  #Jotabe-letter-e {
+    animation: move-letter-e var(--contract-animation-duration) var(--contract-animation-timing-function) var(--contract-animation-delay) both;
+  }
+
+  #letter-e-mask path {
+    animation: move-letter-e-mask var(--contract-animation-duration) var(--contract-animation-timing-function) var(--contract-animation-delay) both;
+  }
+
+  /** Cut Animation **/
+
+  @keyframes scale-cut-mask {
+    0% {
+      transform: scale(1,0);
+    }
+
+    100% {
+      transform: scale(1,1);
+    }
+  }
+
+  #JB-cut-fg {
+    transform-origin: 600px 400px;
+    animation: scale-cut-mask var(--show-cut-animation-duration) var(--show-cut-animation-timing-function) var(--show-cut-animation-delay) both;
+  }
+
+  @keyframes show-cut-line {
+    0% {
+      opacity: 0;
+      transform: scale(0.8,1) translate(0, 54px);
+    }
+    10% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 1;
+      transform: scale(1,1) translate(0, 0);
+    }
+  }
+
+  @keyframes hide-cut-line {
+    0% {
+      transform: scale(1,1) translate(0, 0);
+    }
+
+    100% {
+      transform: scale(0,1) translate(0, 0);
+    }
+  }
+
+  #JB-cut-line {
+    transform-origin: 600px 400px;
+    animation: 
+      show-cut-line var(--show-cut-animation-duration) var(--show-cut-animation-timing-function) var(--show-cut-animation-delay) both,
+      hide-cut-line var(--hide-cut-animation-duration) var(--hide-cut-animation-timing-function) var(--hide-cut-animation-delay) forwards
+    ;
+  }
+
+  /** Text Reveal Animation **/
+
+  @keyframes move-cut-text-mask {
+    0% {
+      transform: translate(-368px, 0);
+    }
+
+    100% {
+      transform: translate(368px, 0);
+    }
+  }
+  
+  #text-mask {
+    animation: move-cut-text-mask var(--reveal-text-animation-duration) var(--reveal-text-animation-timing-function) var(--reveal-text-animation-delay) both;
+  }
+
+  /** Open Piano Animation **/
+
+  @keyframes fade-bottom {
+    0% {
+      fill: #ffffff;
+    }
+
+    100% {
+      fill: #000000;
+    }
+  }
+  
+  #JB-cut-bottom {
+    animation: fade-bottom var(--fade-bottom-animation-duration) var(--fade-bottom-animation-timing-function) var(--fade-bottom-animation-delay) both;
+  }
+
+  /** Open Piano Animation **/
+
+  @keyframes open-piano-skew {
+    0% {
+      transform: skewY(0);
+    }
+
+    100% {
+      transform: skewY(-20deg);
+    }
+  }
+
+  @keyframes open-piano-scale {
+    0% {
+      transform: scale(1, 1);
+    }
+
+    100% {
+      transform: scale(0.7, 1);
+    }
+  }
+
+  @keyframes open-piano-opacity {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: -1;
+    }
+  }
+  
+  #Jotabe-parts {
+    transform-origin: 432px 344px;
+    animation-composition: add;
+    animation:
+      open-piano-skew var(--open-piano-animation-duration) linear var(--open-piano-animation-delay) forwards,
+      open-piano-opacity var(--open-piano-animation-duration) ease-in var(--open-piano-animation-delay) forwards,
+      open-piano-scale var(--open-piano-animation-duration) cubic-bezier(.4,.01,.94,.62) var(--open-piano-animation-delay) forwards;
+  }
+
+  @keyframes show-piano-bottom {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  #JB-piano-bottom {
+    opacity: 0;
+    animation: show-piano-bottom 0s step-end var(--open-piano-animation-delay) forwards;
+  }
+
+  /** Hide Text Animation **/
+
+  @keyframes hide-text {
+    0% {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
+
+    100% {
+      transform: translate(0, -64px);
+      opacity: 0;
+    }
+  }
+  
+  #JB-cut-text {
+    animation: hide-text var(--hide-text-animation-duration) var(--hide-text-animation-timing-function) var(--hide-text-animation-delay) both;
+  }
+  </style>
+  <defs id="defs">
+    <linearGradient
+       id="text-mask-gradient"
+       x1="568"
+       y1="360"
+       x2="632"
+       y2="392"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         style="stop-color:#ffffff;"
+         offset="0" />
+      <stop
+         style="stop-color:#000000;"
+         offset="1" />
+    </linearGradient>
+    <mask
+      maskUnits="userSpaceOnUse"
+      id="JB-cut-text-mask">
+      <rect
+        style="fill:url(#text-mask-gradient);"
+        id="text-mask"
+        width="1200"
+        height="60"
+        x="0"
+        y="344"
+      />
+    </mask>
+    <mask
+      maskUnits="userSpaceOnUse"
+      id="JB-cut-mask">
+      <rect
+        x="0"
+        y="0"
+        width="1200"
+        height="480"
+        style="fill:#ffffff"
+        id="JB-cut-bg" />
+      <rect
+        x="0"
+        y="347"
+        width="1200"
+        height="135"
+        style="fill:#ffffff"
+        id="JB-cut-bottom" />
+      <rect
+        x="0"
+        y="347"
+        width="1200"
+        height="53"
+        style="fill:#000000"
+        id="JB-cut-fg" />
+
+    </mask>
+    <mask
+     id="letters-ota-mask"
+    >
+      <path
+        style="fill: white;"
+        transform="translate(-304,-48)"
+        d="M 288,0 H 738 V 480 H 288 Z"
+      />
+    </mask>
+    <mask
+     id="letter-e-mask"
+    >
+      <path
+        style="fill: white;"
+        transform="translate(-736,-48)"
+        d="m 816,0 v 182.5 c 19.9,23.9 23,52.4 2.9,75.1 28.3,0 43.9,10.8 55.7,24 13.3,14.3 21.4,33.4 21.4,62.4 0,52.2 -35.8,88 -80,88 v 48 h 384 V 0 Z"
+      />
+    </mask>
+    <mask
+      id="letter-j-01-mask"
+    >
+      <path
+        class="stroke-mask"
+        id="letter-j-01-maskpath"
+        style="stroke-width: 32; stroke-linecap: round;"
+        transform="translate(-128,-48)"
+        d="m 176,176 c 0,8 -21.1,8 -21,-8 0.1,-10.2 13,-16.7 21,-16.7 16,0 25.8,6.9 25.9,24.7 0.1,16 -10,26.4 -25.9,26.3 -15.9,-0.1 -40,-21 -40,-50.3 0,-71.2 62.1,-90.8 96,-90.4 37.2,0.3 64,19.2 64,19.2"
+      />
+    </mask>
+    <mask
+      id="letter-j-02-mask"
+    >
+      <path
+        class="stroke-mask"
+        id="letter-j-02-maskpath"
+        style="stroke-width: 56; stroke-linecap: round;"
+        transform="translate(-128,-48)"
+        d="M 264,39.8 V 432"
+      />
+    </mask>
+    <mask
+      id="letter-j-03-mask"
+    >
+      <path
+        class="stroke-mask"
+        id="letter-j-03-maskpath"
+        style="stroke-width: 56; stroke-linecap: round;"
+        transform="translate(-128,-48)"
+        d="M 280,424 C 144,424 152,392 152,256"
+      />
+    </mask>
+    <mask
+      id="letters-ota-01-mask"
+    >
+      <path
+        class="stroke-mask"
+        id="letters-ota-01-maskpath"
+        style="fill-opacity: 1; stroke-width: 56; stroke-linecap: round; stroke-linejoin: miter; stroke-opacity: 1;"
+        transform="translate(-304,-48)"
+        d="m 472,264 c -10.4,9.8 -34,13.3 -49.4,-2.6 C 385.9,223.5 328,296 328,344 c 0,24 8,96 56,96 48,0 75.4,-89.5 43.6,-158.6"
+      />
+    </mask>
+    <mask
+      id="letters-ota-02-mask"
+    >
+      <path
+        class="stroke-mask"
+        id="letters-ota-02-maskpath"
+        style="stroke-width: 56; stroke-linecap: round; stroke-linejoin: round;"
+        transform="translate(-304,-48)"
+        d="m 456,184.4 56,-18.6 v 212.4 c 0,61.9 72,45.7 72,45.7"
+      />
+    </mask>
+    <mask
+      id="letters-ota-03-mask"
+    >
+      <path
+        class="stroke-mask"
+        id="letters-ota-03-maskpath"
+        style="stroke-width: 56; stroke-linecap: round;"
+        transform="translate(-304,-48)"
+        d="m 424,264 c 0,0 -40,15.2 -40,40 0,80 112,6.5 168,-16 56,-22.5 120.3,-52 129,56.8 7,87.2 31,79.2 31,79.2"
+      />
+    </mask>
+    <mask
+      id="letters-ota-04-mask"
+    >
+      <path
+        class="stroke-mask"
+        id="letters-ota-04-maskpath"
+        style="stroke-width: 56; stroke-linecap: round;"
+        transform="translate(-304,-48)"
+        d="m 680,304 c 0,0 -96.4,12.8 -88,80 8,64 96,40 96,40"
+      />
+    </mask>
+    <mask
+      id="letter-b-01-mask"
+    >
+      <path
+        class="stroke-mask"
+        id="letter-b-01-maskpath"
+        style="stroke-width: 56; stroke-linecap: round;"
+        transform="translate(-560,-48)"
+        d="M 760,48 V 432"
+      />
+    </mask>
+    <mask
+      id="letter-b-02-mask"
+    >
+      <path
+        class="stroke-mask"
+        id="letter-b-02-maskpath"
+        style="stroke-width: 36; stroke-linecap: round;"
+        transform="translate(-560,-48)"
+        d="m 736,88 c 0,0 13.4,32 40,64 17.6,21.2 48,40 48,72 0,40 -39.7,48.2 -39.7,48.2"
+      />
+    </mask>
+    <mask
+      id="letter-b-03-mask"
+    >
+      <path
+        class="stroke-mask"
+        id="letter-b-03-maskpath"
+        style="stroke-width: 56; stroke-linecap: round;"
+        transform="translate(-560,-48)"
+        d="M 752,288 C 792,264 872,248 872,326.2 872,448 752,424 752,424"
+      />
+    </mask>
+    <mask
+      id="letter-e-01-mask"
+    >
+      <path
+        class="stroke-mask"
+        id="letter-e-01-maskpath"
+        style="stroke-width: 36; stroke-linecap: round;"
+        transform="translate(-736,-48)"
+        d="m 928,360 128,-48"
+      />
+    </mask>
+    <mask
+      id="letter-e-02-mask"
+    >
+      <path
+        class="stroke-mask"
+        id="letter-e-02-maskpath"
+        style="stroke-width: 56; stroke-linecap: round;"
+        transform="translate(-736,-48)"
+        d="m 1048,344 c 0,0 0,-64.3 -64,-64 -48,0.2 -52.5,53.5 -48,72 7.5,30.9 40,90.6 120,56"
+      />
+    </mask>
+    <mask
+      id="letter-e-03-mask"
+    >
+      <path
+        class="stroke-mask"
+        id="letter-e-03-maskpath"
+        style="stroke-width: 56; stroke-linecap: round;"
+        transform="translate(-736,-48)"
+        d="m 904,220 h 128"
+      />
+    </mask>
+  </defs>
+  <g
+     id="Jotabe-parts"
+     mask="url(#JB-cut-mask)"
+     style="display:inline">
+    <g
+       id="Jotabe-letter-j"
+       transform="translate(128,48)">
+      <path
+         id="Jotabe-letter-j-01"
+         mask="url(#letter-j-01-mask)"
+         d="M 104,0 C 46.6,0 0,45.4 0,105.4 0.1,153 27.4,168 48,168 70.1,168 88,150.1 88,128 88,105.9 70.1,88 48,88 34.9,88 23.3,94.3 16,104 16,45.4 68,22.4 112,26.4 130,30.6 146.3,27.1 160,16 143.9,5.8 124.4,0 104,0 Z" />
+      <path
+         id="Jotabe-letter-j-02"
+         mask="url(#letter-j-02-mask)"
+         d="m 112,16 v 368 h 48 V 16 Z" />
+      <path
+         id="Jotabe-letter-j-03"
+         mask="url(#letter-j-03-mask)"
+         d="M 112,368 C 96,368 48,352 48,272 V 239 L 0,257 v 39 c 0,52.2 35.8,88 80,88 h 32 c 8,-3.4 8,-13 0,-16 z" />
+    </g>
+    <g
+       id="Jotabe-letters-ota"
+       mask="url(#letters-ota-mask)"
+       transform="translate(304,48)">
+      <path
+         id="Jotabe-letters-ota-01"
+         mask="url(#letters-ota-01-mask)"
+         d="m 80,208.7 c -60.5,0 -80,47.3 -80,88 0,47.3 18.4,87.3 80,87.3 63.9,0 80,-40 80,-88 0,-48 -20.5,-87.3 -80,-87.3 z m 0.2,15.3 c 20.4,0 31.8,24 31.8,72 0,40 -9.8,72 -31.8,72 C 57.8,368 48,336 47.8,296 47.5,248 61,224 80.2,224 Z" />
+      <path
+         id="Jotabe-letters-ota-02"
+         mask="url(#letters-ota-02-mask)"
+         d="m 269.3,357.7 c -26.2,9.8 -37.2,-0.6 -37.3,-29.8 -0.1,-26.1 0,-134.3 0,-223.9 l -72,27 v 16 c 12.7,-4.7 24,5.4 24,21 v 167.8 c 0,27.9 8,48.2 40,48.2 19.8,0.4 37.9,-7.5 56,-14.3 4.1,-1.7 2.7,-16.6 -10.7,-12 z" />
+      <path
+         id="Jotabe-letters-ota-03"
+         mask="url(#letters-ota-03-mask)"
+         d="m 343.3,254.3 2.6,15 c 5.1,28.8 11.9,67.4 15.4,87.1 3.5,19.7 14.8,27.6 33.3,27.6 H 432 c 7.5,-3 6.8,-13.9 0,-16 -16,0 -21.6,-10.1 -24.9,-28.6 -3,-17.1 -6.8,-38.7 -16.3,-92.6 -5.6,-31.7 -31.6,-43.1 -62.8,-43.1 -16.5,0 -29.2,4.5 -41.6,9.1 l -169.9,63.7 c -12.3,4.3 -26.8,-4.3 -26.8,-18.9 0,-8.3 5.4,-15.6 12.7,-18.6 14.1,-7.8 6.2,-29.1 -10.5,-22.9 -20.7,7.8 -31.2,30.8 -23.4,51.5 7.8,20.7 30.8,31.2 51.5,23.4 L 292.1,226.5 C 320,216 337,225.4 343.3,254.3 Z" />
+      <path
+         id="Jotabe-letters-ota-04"
+         mask="url(#letters-ota-04-mask)"
+         d="m 361.3,356.4 c -29.9,10.9 -49.3,4.8 -49.3,-31.6 0.3,-28.2 13.5,-48.6 40,-57.7 11.3,-5.9 3.3,-16.9 0,-16.2 -53.1,19.9 -87.8,37.4 -88,79.8 -0.1,28.3 14.1,53.3 48,53.3 16.1,0 42.5,-9.1 56,-14.2 8,-3.4 2.8,-15.8 -6.7,-13.4 z" />
+    </g>
+    <g
+       id="Jotabe-letter-b"
+       transform="translate(560,48)">
+      <path
+         id="Jotabe-letter-b-01"
+         mask="url(#letter-b-01-mask)"
+         d="m 176,29 v 355 h 48 V 98.6 C 213.9,85.7 206.8,74.1 200.1,61.7 188.6,40.5 176,29 176,29 Z" />
+      <path
+         id="Jotabe-letter-b-02"
+         mask="url(#letter-b-02-mask)"
+         d="m 236,220 c 7.2,0 16.1,-2.9 22.9,-10.4 21.9,-24.3 16.4,-55.8 -8,-80.7 C 224,101.5 211.5,82.9 200.1,61.7 188.6,40.5 176,29 176,29 c 9.2,54.2 29.7,91 48,107 15.5,12.9 32,26.6 32,46 0,15.7 -4.5,26.6 -20,32.4 C 231.7,216 233.4,220 236,220 Z" />
+      <path
+         id="Jotabe-letter-b-03"
+         mask="url(#letter-b-03-mask)"
+         d="m 288,272 c 0,80 -48,96 -64,96 -9.5,3.1 -8,13.8 0,16 h 32 c 44.2,0 80,-35.8 80,-88 0,-53.1 -31.4,-86.4 -77.1,-86.4 -7.3,0 -15.1,1.9 -22.9,4.8 l -12,4.5 c -7.2,1.1 -7.1,17.4 0,16 12,-4.5 24.8,-9.8 34.2,-9.8 15.5,0 29.8,8.7 29.8,47 z" />
+    </g>
+    <g
+       id="Jotabe-letter-e"
+      mask="url(#letter-e-mask)"
+       transform="translate(736,48)">
+      <path
+         id="Jotabe-letter-e-01"
+         mask="url(#letter-e-01-mask)"
+         d="M 228.3,310.4 329.9,272.2 c -0.9,-5.2 -2.1,-10.2 -3.5,-14.6 l -100.8,37.8 c -10,4.3 -4.7,15.1 2.7,15 z" />
+      <path
+         id="Jotabe-letter-e-02"
+         mask="url(#letter-e-02-mask)"
+         d="m 329.9,272.2 c -8.4,-47.4 -37.7,-64 -73.9,-64.2 -63,0 -80,48.9 -80,88 0,52.2 35.8,88 80,88 28,0 51.3,-5.6 80,-24 v -16 c -78.6,46.5 -102.8,-4.6 -109.2,-41.1 -7.3,-41.7 -2.3,-79.3 24.5,-78.9 v 0 c 20.8,0.3 27.008,34.04701 29.908,50.54701 z" />
+      <path
+         id="Jotabe-letter-e-03"
+         mask="url(#letter-e-03-mask)"
+         d="m 272,146.6 c -26.7,10 -53.3,20 -80,30 v 16 l 48,-18 c 2.6,15 16,26 32,20 l 48,-18 v -16 c 0,0 -8.6,3.2 -16,6 -16,6 -29.4,-5 -32,-20 z" />
+    </g>
+    <rect
+      id="JB-piano-bottom" 
+      x="432"
+      y="344"
+      width="304"
+      height="4"
+    />
+  </g>
+  <rect
+    id="JB-cut-line" 
+    x="416"
+    y="344"
+    width="368"
+    height="4"
+  />
+  <g
+    id="JB-cut-text-box"
+    mask="url(#JB-cut-text-mask)"
+  >
+    <text
+      x="600"
+      y="389"
+      style="
+      font-weight: 500;
+      font-stretch:expanded;
+      font-size:42px;
+      line-height:1;
+      font-family:'Bebas Neue Pro';
+      text-align:center;
+      letter-spacing:0px;
+      text-anchor:middle"      
+      xml:space="preserve"
+      id="JB-cut-text">LE LIVE ARRIVE</text>
+  </g>
+</svg>

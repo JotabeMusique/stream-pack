@@ -1,0 +1,45 @@
+{
+  "name": "jotabe-stream-pack",
+  "version": "1.0.0",
+  "description": "Stream Pack and Overlay for Jotabê",
+  "keywords": [
+    "twitch",
+    "twitch-overlay",
+    "obs",
+    "streampack",
+    "design"
+  ],
+  "type": "module",
+  "author": {
+    "name": "La Jarre à Son / Rémi Jarasson",
+    "email": "contact+streampack@ljas.fr",
+    "url": "https://ljas.fr"
+  },
+  "homepage": "https://jotabemusique.github.io/stream-pack",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jotabemusique/stream-pack.git"
+  },
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build --emptyOutDir",
+    "preview": "vite preview",
+    "deploy": "npm run build && gh-pages -d dist"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "@types/obs-studio": "^2.17.2",
+    "@types/qs": "^6.14.0",
+    "gh-pages": "^6.3.0",
+    "typescript": "~5.9.3",
+    "vite": "^7.2.4"
+  },
+  "dependencies": {
+    "@qr-platform/qr-code.js": "^0.20.11",
+    "@twurple/api": "^8.0.2",
+    "@twurple/auth": "^8.0.2",
+    "@twurple/eventsub-ws": "^8.0.2",
+    "qs": "^6.14.1"
+  }
+}

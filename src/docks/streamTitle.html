@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, interactive-widget=resizes-content" />
+    <title>Jotabê - Stream pack - Stream Title</title>
+    <script type="module" src="./streamTitle.ts"></script>
+  </head>
+  <body>
+    <header>
+      <button class="btn btn--primary" id="nextTitleBtn">Titre Suivant</button>
+      <img src="../assets/loading.svg" id="updatingIcon" />
+      <div id="currentTitle"></div>
+      <button class="btn btn--neutral" id="decrementTitleBtn">-1</button>
+      <button class="btn btn--neutral" id="incrementTitleBtn">+1</button>
+    </header>
+    <ul class="list" id="streamTitles"></ul>
+
+    <footer>
+      <form id="newTitle">
+        <input id="title" type="text" value="" placeholder="[CATÉGORIE] Titre du stream - Description du stream !commands" />
+        <button class="btn btn--neutral" id="addTitleBtn">Ajouter</button>
+        <button class="btn btn--success" id="editTitleBtn">Modifier</button>
+        <button type="reset" class="btn btn--neutral" id="cancelEditTitleBtn">Annuler</button>
+      </form>
+    </footer>
+
+    <template id="listItemTemplate">
+      <li class="listItem">
+        <button class="btn btn--neutral action-activate">▷</button>
+
+        <div class="itemContent">
+          <div class="data-category"></div>
+          <div class="data-title">Stream Title #1</div>
+          <span class="data-subtitle"></span>
+          <span class="data-suffix"></span>
+        </div>
+
+        <div class="btn-group">
+          <button class="btn btn--neutral action-up">▲</button>
+          <button class="btn btn--neutral action-down">▼</button>
+          <button class="btn btn--neutral action-edit">✎</button>
+          <button class="btn btn--danger action-delete">✕</button>
+        </div>
+      </li>
+    </template>
+  </body>
+</html>

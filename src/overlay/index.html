@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jotabê - Stream pack - Overlay</title>
+    <script type="module" src="./main.ts"></script>
+  </head>
+
+  <body>
+    <div id="overlay">
+      <header>
+        <div id="heading">
+          <div class="headingCategory" id="category">
+          </div>
+          <div class="headingTitle">
+            <div id="title"></div>
+            <div id="subtitle"></div>
+          </div>
+        </div>
+
+        <div id="broadcaster">
+          <img id="logo" src="../assets/Jotabe-Logo.white.svg" />
+          <img id="guestFeaturing" src="../assets/guest-star-featuring.svg" />
+          <div id="guests"></div>
+        </div>
+
+        <div id="socials" style="--socialColor: #9146ff; --linkColor: #9146ff;">
+          <div class="socialInfo">
+            <div class="socialHeader">
+              <div id="socialTitle">Twitch</div>
+              <div id="socialLink">/jotabemusique</div>
+            </div>
+            <div id="socialDescription">Retrouvez mes cours de piano gratuitement les samedis sur Twitch. Connaissez-vous Twitch Prime ?</div>
+          </div>
+          <div class="socialIcon" id="socialIcon">
+            <img src="../assets/twitch.svg" />
+          </div>
+        </div>
+      </header>
+
+      <section id="overlayContent">
+      </section>
+
+      <!-- STATS -->
+
+      <footer class="stats-2">
+        <div class="tile tile--withValue --none" id="datetime">
+          <svg class="tile-left" width="84" height="45" viewBox="0 0 84 45">
+            <path d="M 5.6,0 0,15 H 51.3 C 48.5,30 61.4,45 82.7,45 H 84 V 0 Z" />
+          </svg>
+          <div class="tile-label">
+            <div class="date">
+              <span id="timeDay"></span>
+              <span id="timeMonth"></span>
+            </div>
+          </div>
+          <div class="tile-value">
+            <span class="time" id="time"></span>
+          </div>
+          <svg class="tile-right" width="45" height="45" viewBox="0 0 45 45">
+            <path d="M 0,0 V 45 H 37.4 L 43,30 H 34.4 C 13,30 0.2,15 3,0 Z" />
+          </svg>
+        </div>
+
+        <div class="tile tile--withValue --none" id="lastFollower">
+          <svg class="tile-left" width="84" height="45" viewBox="0 0 84 45">
+            <path d="M 5.6,0 0,15 H 51.3 C 48.5,30 61.4,45 82.7,45 H 84 V 0 Z" />
+          </svg>
+          <div class="tile-label">
+            <img src="../assets/follow.svg" width="24" height="24" />
+          </div>
+          <div class="tile-value">
+            <div class="tile-blind">
+              <div class="tile-blindText">
+                <span>Nouveau follow</span>
+              </div>
+              <hr />
+            </div>
+            <span class="tile-user"></span>
+          </div>
+          <svg class="tile-right" width="45" height="45" viewBox="0 0 45 45">
+            <path d="M 0,0 V 45 H 37.4 L 43,30 H 34.4 C 13,30 0.2,15 3,0 Z" />
+          </svg>
+        </div>
+
+        <div class="tile tile--withValue --none" id="lastSubscriber">
+          <svg class="tile-left" width="84" height="45" viewBox="0 0 84 45">
+            <path d="M 5.6,0 0,15 H 51.3 C 48.5,30 61.4,45 82.7,45 H 84 V 0 Z" />
+          </svg>
+          <div class="tile-label">
+            <img src="../assets/sub.svg" width="24" height="24" />
+          </div>
+
+          <div class="tile-value">
+            <div class="tile-blind">
+              <div class="tile-blindText">
+                <span>Nouvel abonnement</span>
+              </div>
+              <hr />
+            </div>
+            <span class="tile-user"></span>
+          </div>
+          <svg class="tile-right" width="45" height="45" viewBox="0 0 45 45">
+            <path d="M 0,0 V 45 H 37.4 L 43,30 H 34.4 C 13,30 0.2,15 3,0 Z" />
+          </svg>
+        </div>
+
+        <div class="tile tile--withValue --none" id="viewers">
+          <svg class="tile-left" width="84" height="45" viewBox="0 0 84 45">
+            <path d="M 5.6,0 0,15 H 51.3 C 48.5,30 61.4,45 82.7,45 H 84 V 0 Z" />
+          </svg>
+          <div class="tile-label">
+            <img src="../assets/viewers.svg" width="24" height="24" />
+          </div>
+          <div class="tile-value"></div>
+          <svg class="tile-right" width="45" height="45" viewBox="0 0 45 45">
+            <path d="M 0,0 V 45 H 37.4 L 43,30 H 34.4 C 13,30 0.2,15 3,0 Z" />
+          </svg>
+        </div>
+      </footer>
+    </div>
+
+    <!-- PRESENTATION OVERLAY -->
+
+    <div id="presentation" class="">
+      <video preload id="stinger-default" class="stinger">
+        <source src="../assets/stinger-default.webm" type="video/webm" />
+      </video>
+      <video preload id="stinger-2020" class="stinger">
+        <source src="../assets/stinger-2020.webm" type="video/webm" />
+      </video>
+      <video preload id="stinger-2021" class="stinger">
+        <source src="../assets/stinger-2021.webm" type="video/webm" />
+      </video>
+      <video preload id="stinger-2023" class="stinger">
+        <source src="../assets/stinger-2023.webm" type="video/webm" />
+      </video>
+      <video preload id="stinger-2024" class="stinger">
+        <source src="../assets/stinger-2024.webm" type="video/webm" />
+      </video>
+      <video preload id="stinger-2025" class="stinger">
+        <source src="../assets/stinger-2025.webm" type="video/webm" />
+      </video>
+      <video preload id="stinger-interpromo" class="stinger">
+        <source src="../assets/stinger-interpromo.webm" type="video/webm" />
+      </video>
+      <div id="presentationBackground">
+        <img src="" id="presentationBackgroundImage" />
+      </div>
+      <div id="presentationHeader">
+        <div class="tile" id="presentationTile">
+          <svg class="tile-left" width="84" height="45" viewBox="0 0 84 45">
+            <path d="M 5.6,0 0,15 H 51.3 C 48.5,30 61.4,45 82.7,45 H 84 V 0 Z" />
+          </svg>
+          <div class="tile-label" id="presentationCategory"></div>
+          <svg class="tile-right" width="45" height="45" viewBox="0 0 45 45">
+            <path d="M 0,0 V 45 H 37.4 L 43,30 H 34.4 C 13,30 0.2,15 3,0 Z" />
+          </svg>
+        </div>
+        <div id="presentationLogo">
+          <svg
+            viewBox="0 0 480 480"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:svg="http://www.w3.org/2000/svg">
+            <path
+                id="presentationLogoBackground"
+                d="M 232,-0.13671875 C 157.19314,-0.13671875 95.863281,61.2174 95.863281,136.08008 V 336 c 0,61.55088 50.585839,112.13672 112.136719,112.13672 h 176 c 61.50239,0 112.13672,-50.52507 112.13672,-112.13672 v -24 c 0,-39.91448 -8.54076,-71.62735 -25.69336,-98.01758 -17.1526,-26.39022 -39.8099,-46.79818 -68.81836,-75.80664 -23.9696,-23.9696 -34.82005,-40.355694 -45.2207,-59.697264 a 32.140802,32.140802 0 0 0 -0.0566,-0.105469 C 339.02858,46.450437 299.08426,0.1043596 232.11523,-0.13671875 a 32.140802,32.140802 0 0 0 -0.11523,0 z"
+                transform="translate(-56,16)" />
+            <path
+                id="presentationLogoForeground"
+                transform="translate(72,48)"
+                d="M 104,0 C 46.6,0 0,45.4 0,105.4 0.1,153 27.4,168 48,168 70.1,168 88,150.1 88,128 88,105.9 70.1,88 48,88 34.9,88 23.3,94.3 16,104 16,45.4 68,22.4 112,26.4 V 368 C 96,368 48,352 48,272 V 239 L 0,257 v 39 c 0,52.2 35.8,88 80,88 h 80 V 16 C 143.9,5.8 124.4,0 104,0 Z m 72,29 v 355 h 80 c 44.2,0 80,-35.8 80,-88 0,-53.1 -31.4,-86.4 -77.1,-86.4 21.9,-24.3 16.4,-55.8 -8,-80.7 C 224,101.5 211.5,82.9 200.1,61.7 188.6,40.5 176,29 176,29 Z m 48,107 c 15.5,12.9 32,26.6 32,46 0,15.7 -4.5,26.6 -20,32.4 l -12,4.5 z m 34.2,89.1 c 15.5,0 29.8,8.7 29.8,47 0,79.9 -48,95.9 -64,95.9 V 234.9 c 12,-4.5 24.8,-9.8 34.2,-9.8 z" />
+          </svg>
+        </div>
+      </div>
+      <div id="presentationContent">
+        <h1 id="presentationTitle"></h1>
+        <h2 id="presentationSubtitle"></h2>
+      </div>
+    </div>
+
+    <!-- TEMPLATES -->
+
+    <template id="guestTemplate">
+      <div class="guest">
+        <div class="guestName"></div>
+        <div class="guestAvatar">
+          <img class="guestProfilePicture" src="" />
+        </div>
+      </div>
+    </template>
+
+    <div id="debug">
+      <button id="force_presentation">FORCE PRESENTATION</button>
+      <button id="toggle_presentation">TOGGLE PRESENTATION</button>
+      <button id="next_title">NEXT TITLE</button>
+      <button class="state-btn" id="toggle_auto_recording">AUTO RECORD</button>
+      <div id="log"></div>
+    </div>
+  </body>
+</html>

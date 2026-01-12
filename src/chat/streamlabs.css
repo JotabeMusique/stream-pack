@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
+
+@keyframes shakeX {
+  0%,
+  25% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  5%,
+  15% {
+    transform: translate3d(-.1em, 0, 0);
+  }
+
+  10%,
+  20% {
+    transform: translate3d(.1em, 0, 0);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    margin-bottom: calc(var(--message-height) * -1);
+  }
+  100% {
+    opacity: 1;
+    margin-bottom: 8px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: {background_color};
+  font-family: 'Hanken Grotesk';
+  font-weight: 500;
+  font-size: {font_size};
+  line-height: 1.5em;
+  color: {text_color};
+}
+
+#messages {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#log .message {
+  animation: slideUp .6s cubic-bezier(0.33, 1, 0.68, 1) forwards, fadeOutUp 0.5s ease {message_hide_delay} forwards;
+  -webkit-animation: slideUp .6s cubic-bezier(0.33, 1, 0.68, 1) forwards, fadeOutUp 0.5s ease {message_hide_delay} forwards;
+}
+
+#log .message.hasMention {
+  animation: slideUp .6s cubic-bezier(0.33, 1, 0.68, 1) forwards, fadeOutUp 0.5s ease {message_hide_delay} forwards, shakeX 2s ease 0.5s infinite;
+  -webkit-animation: slideUp .6s cubic-bezier(0.33, 1, 0.68, 1) forwards, fadeOutUp 0.5s ease {message_hide_delay} forwards, shakeX 2s ease 0.5s infinite;
+}
+
+.colon {
+  display: none;
+}
+
+#log {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 16px 16px 8px;
+  width: 100%;
+}
+
+#log .message {
+	margin-bottom: 8px;
+}
+
+#log .message.deleted {
+  visibility: hidden;
+}
+
+#log .emote {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  padding: 0.4em 0.2em;
+  position: relative;
+}
+
+#log .emote img {
+  display: inline-block;
+  height: 1em;
+  opacity: 0;
+}
+
+#log .meta,
+#log .content {
+  vertical-align: top;
+}
+
+#log .meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.5em;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin-bottom: -0.75em;
+  gap: 0.5em;
+}
+
+#log .content {
+  background-color: var(--message-color, {messageColor});
+  word-wrap: break-word;
+  padding: 0.75em 0.5em 0.25em;
+  border-radius: 0.5em;
+}
+
+.badge {
+  position: relative;
+  display: inline-block;
+  margin: 0 0.2em;
+  height: 1.2em;
+  vertical-align: middle;
+}
+
+.promotion {
+  background: var(--promotion-color, {promotionColor});
+  font-family: 'DM Serif Display', serif;
+  color: white;
+  position: relative;
+  display: inline-block;
+  padding: 0 0.5em;
+  border-radius: 1em;
+  font-weight: bold;
+  min-width: 3.5em;
+  text-align: center;
+}
+
+.promotion:empty {
+  display: none;
+}
+
+.name {
+  font-weight: 700;
+  padding: 0 0.5em;
+  border-radius: 1em;
+  background-color: var(--username-color, {usernameColor});
+  color: {text_color};
+  flex-shrink: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.message.hasMention .name {
+  color: white;
+  background-color: {text_color};
+}
+
+.message.broadcaster .name {
+  color: white;
+  background-color: var(--broadcaster-color, {broadcasterColor});
+}

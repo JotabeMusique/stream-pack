@@ -1,0 +1,446 @@
+<svg id="jotabe-logo" version="1.1" viewBox="0 0 480 480" width="100%" height="480" xmlns="http://www.w3.org/2000/svg"
+  xmlns:svg="http://www.w3.org/2000/svg">
+  <style>
+    svg {
+      --animation-speed: 1;
+
+      --stroke-animation-timing-function: ease-in-out;
+      --stroke-animation-duration: calc(0.5s / var(--animation-speed));
+      --stroke-animation-base-duration: calc(0.5s / var(--animation-speed));
+      --stroke-animation-delay: calc(0.5s / var(--animation-speed));
+      --show-cut-animation-duration: calc(0.75s / var(--animation-speed));
+      --show-cut-animation-delay: calc(var(--stroke-animation-duration) * 7);
+      --show-cut-animation-timing-function: ease;
+      --reveal-text-animation-duration: calc(2s / var(--animation-speed));
+      --reveal-text-animation-delay: calc(var(--show-cut-animation-delay));
+      --reveal-text-animation-timing-function: linear;
+      --fade-bottom-animation-duration: calc(0.3s / var(--animation-speed));
+      --fade-bottom-animation-delay: calc(var(--reveal-text-animation-delay) + calc(4s / var(--animation-speed)));
+      --fade-bottom-animation-timing-function: ease-in;
+      --open-piano-animation-duration: calc(1s / var(--animation-speed));
+      --open-piano-animation-delay: calc(var(--fade-bottom-animation-delay) + var(--fade-bottom-animation-duration));
+      --open-piano-animation-timing-function: linear;
+      --hide-text-animation-duration: calc(1s / var(--animation-speed));
+      --hide-text-animation-delay: calc(var(--fade-bottom-animation-delay) + var(--fade-bottom-animation-duration) + calc(0.5s / var(--animation-speed)));
+      --hide-text-animation-timing-function: ease;
+      --hide-cut-animation-duration: calc(1s / var(--animation-speed));
+      --hide-cut-animation-delay: calc(var(--open-piano-animation-delay) + var(--open-piano-animation-duration));
+      --hide-cut-animation-timing-function: ease;
+    }
+
+    #JB-parts,
+    #JB-cut-line,
+    #JB-cut-text {
+      fill: black;
+    }
+
+    /** Stroke Animation **/
+
+    @keyframes draw-stroke {
+      0% {
+        stroke-dashoffset: var(--line-length);
+        stroke-dasharray: var(--line-length);
+      }
+
+      100% {
+        stroke-dashoffset: 0;
+        stroke-dasharray: var(--line-length);
+      }
+    }
+
+    @keyframes draw-stroke-pen {
+      0% {
+        stroke-dashoffset: calc(-1* var(--line-length));
+        stroke-dasharray:  1px calc(var(--line-length));
+      }
+
+      100% {
+        stroke-dashoffset:  calc(-1* var(--line-length) - var(--line-length));
+        stroke-dasharray:  1px calc(var(--line-length));
+      }
+    }
+
+    .stroke-mask {
+      stroke: white;
+      animation: draw-stroke var(--stroke-animation-duration, var(--stroke-animation-base-duration)) var(--stroke-animation-timing-function) calc(var(--stroke-animation-delay) * var(--stroke-animation-delay-offset)) both;
+    }
+
+    #letter-j-01-maskpath {
+      --line-length: 432px;
+      --stroke-animation-duration: calc(var(--stroke-animation-base-duration) * 1.9);
+      --stroke-animation-delay-offset: 0;
+    }
+
+    #letter-j-02-maskpath {
+      --line-length: 395px;
+      --stroke-animation-delay-offset: 1.5;
+    }
+
+    #letter-j-03-maskpath {
+      --line-length: 264px;
+      --stroke-animation-delay-offset: 2.3;
+    }
+
+    #letter-b-01-maskpath {
+      --line-length: 386px;
+      --stroke-animation-delay-offset: 3;
+    }
+
+    #letter-b-02-maskpath {
+      --line-length: 236px;
+      --stroke-animation-delay-offset: 3.5;
+    }
+
+    #letter-b-03-maskpath {
+      --line-length: 344px;
+      --stroke-animation-delay-offset: 4.5;
+    }
+
+  /** Cut Animation **/
+
+  @keyframes scale-cut-mask {
+    0% {
+      transform: scale(1,0);
+    }
+
+    100% {
+      transform: scale(1,1);
+    }
+  }
+
+  #JB-cut-fg {
+    transform-origin: 600px 400px;
+    animation: scale-cut-mask var(--show-cut-animation-duration) var(--show-cut-animation-timing-function) var(--show-cut-animation-delay) both;
+  }
+
+  @keyframes show-cut-line {
+    0% {
+      opacity: 0;
+      transform: scale(0.8,1) translate(0, 54px);
+    }
+    10% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 1;
+      transform: scale(1,1) translate(0, 0);
+    }
+  }
+
+  @keyframes hide-cut-line {
+    0% {
+      transform: scale(1,1) translate(0, 0);
+    }
+
+    100% {
+      transform: scale(0,1) translate(0, 0);
+    }
+  }
+
+  #JB-cut-line {
+    transform-origin: 240px 400px;
+    animation: 
+      show-cut-line var(--show-cut-animation-duration) var(--show-cut-animation-timing-function) var(--show-cut-animation-delay) both,
+      hide-cut-line var(--hide-cut-animation-duration) var(--hide-cut-animation-timing-function) var(--hide-cut-animation-delay) forwards
+    ;
+  }
+
+  /** Text Reveal Animation **/
+
+  @keyframes move-cut-text-mask {
+    0% {
+      transform: translate(-368px, 0);
+    }
+
+    100% {
+      transform: translate(368px, 0);
+    }
+  }
+  
+  #text-mask {
+    animation: move-cut-text-mask var(--reveal-text-animation-duration) var(--reveal-text-animation-timing-function) var(--reveal-text-animation-delay) both;
+  }
+
+  /** Open Piano Animation **/
+
+  @keyframes fade-bottom {
+    0% {
+      fill: #ffffff;
+    }
+
+    100% {
+      fill: #000000;
+    }
+  }
+  
+  #JB-cut-bottom {
+    animation: fade-bottom var(--fade-bottom-animation-duration) var(--fade-bottom-animation-timing-function) var(--fade-bottom-animation-delay) both;
+  }
+
+  /** Open Piano Animation **/
+
+  @keyframes open-piano-skew {
+    0% {
+      transform: skewY(0);
+    }
+
+    100% {
+      transform: skewY(-20deg);
+    }
+  }
+
+  @keyframes open-piano-scale {
+    0% {
+      transform: scale(1, 1);
+    }
+
+    100% {
+      transform: scale(0.7, 1);
+    }
+  }
+
+  @keyframes open-piano-opacity {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: -1;
+    }
+  }
+  
+  #JB-parts {
+    transform-origin: 72px 344px;
+    animation-composition: add;
+    animation:
+      open-piano-skew var(--open-piano-animation-duration) linear var(--open-piano-animation-delay) forwards,
+      open-piano-opacity var(--open-piano-animation-duration) ease-in var(--open-piano-animation-delay) forwards,
+      open-piano-scale var(--open-piano-animation-duration) cubic-bezier(.4,.01,.94,.62) var(--open-piano-animation-delay) forwards;
+  }
+
+  @keyframes show-piano-bottom {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  #JB-piano-bottom {
+    opacity: 0;
+    animation: show-piano-bottom 0s step-end var(--open-piano-animation-delay) forwards;
+  }
+
+  /** Hide Text Animation **/
+
+  @keyframes hide-text {
+    0% {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
+
+    100% {
+      transform: translate(0, -64px);
+      opacity: 0;
+    }
+  }
+  
+  #JB-cut-text {
+    animation: hide-text var(--hide-text-animation-duration) var(--hide-text-animation-timing-function) var(--hide-text-animation-delay) both;
+  }
+  </style>
+  <defs id="defs">
+    <linearGradient
+      id="text-mask-gradient"
+      x1="208"
+      y1="360"
+      x2="272"
+      y2="392"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop
+        style="stop-color:#ffffff;"
+        offset="0" />
+      <stop
+        style="stop-color:#000000;"
+        offset="1" />
+    </linearGradient>
+    <mask
+      maskUnits="userSpaceOnUse"
+      id="JB-cut-text-mask">
+      <rect
+        style="fill:url(#text-mask-gradient);"
+        id="text-mask"
+        width="1200"
+        height="60"
+        x="-360"
+        y="344"
+      />
+    </mask>
+    <mask
+      maskUnits="userSpaceOnUse"
+      id="JB-cut-mask">
+      <rect
+        x="0"
+        y="0"
+        width="480"
+        height="480"
+        style="fill:#ffffff"
+        id="JB-cut-bg" />
+      <rect
+        x="0"
+        y="347"
+        width="480"
+        height="135"
+        style="fill:#ffffff"
+        id="JB-cut-bottom" />
+      <rect
+        x="0"
+        y="347"
+        width="480"
+        height="53"
+        style="fill:#000000"
+        id="JB-cut-fg" />
+
+    </mask>
+    <mask
+      id="letter-j-01-mask"
+    >
+      <path
+        class="stroke-mask"
+        id="letter-j-01-maskpath"
+        style="stroke-width: 32; stroke-linecap: round;"
+        transform="translate(-72,-48)"
+        d="m 120,176 c 0,8 -21.1,8 -21,-8 0.1,-10.2 13,-16.7 21,-16.7 16,0 25.8,6.9 25.9,24.7 0.1,16 -10,26.4 -25.9,26.3 -15.9,-0.1 -40,-21 -40,-50.3 0,-71.2 62.1,-90.8 96,-90.4 37.2,0.3 64,19.2 64,19.2"
+      />
+    </mask>
+    <mask
+      id="letter-j-02-mask"
+    >
+      <path
+        class="stroke-mask"
+        id="letter-j-02-maskpath"
+        style="stroke-width: 56; stroke-linecap: round;"
+        transform="translate(-72,-48)"
+        d="M 208,39.8 V 432"
+      />
+    </mask>
+    <mask
+      id="letter-j-03-mask"
+    >
+      <path
+        class="stroke-mask"
+        id="letter-j-03-maskpath"
+        style="stroke-width: 56; stroke-linecap: round;"
+        transform="translate(-72,-48)"
+        d="M 224,424 C 88,424 96,392 96,256"
+      />
+    </mask>
+    <mask
+      id="letter-b-01-mask"
+    >
+      <path
+        class="stroke-mask"
+        id="letter-b-01-maskpath"
+        style="stroke-width: 56; stroke-linecap: round;"
+        transform="translate(-72,-48)"
+        d="M 272,48 V 432"
+      />
+    </mask>
+    <mask
+      id="letter-b-02-mask"
+    >
+      <path
+        class="stroke-mask"
+        id="letter-b-02-maskpath"
+        style="stroke-width: 36; stroke-linecap: round;"
+        transform="translate(-72,-48)"
+        d="m 248,88 c 0,0 13.4,32 40,64 17.6,21.2 48,40 48,72 0,40 -39.7,48.2 -39.7,48.2"
+      />
+    </mask>
+    <mask
+      id="letter-b-03-mask"
+    >
+      <path
+        class="stroke-mask"
+        id="letter-b-03-maskpath"
+        style="stroke-width: 56; stroke-linecap: round;"
+        transform="translate(-72,-48)"
+        d="M 264,288 C 304,264 384,248 384,326.2 384,448 264,424 264,424"
+      />
+    </mask>
+  </defs>
+  <g
+     id="JB-parts"
+     mask="url(#JB-cut-mask)"
+     style="display:inline">
+    <g
+       id="Jotabe-letter-j"
+       transform="translate(72,48)">
+      <path
+        id="Jotabe-letter-j-01"
+        mask="url(#letter-j-01-mask)"
+        d="M 104,0 C 46.6,0 0,45.4 0,105.4 0.1,153 27.4,168 48,168 70.1,168 88,150.1 88,128 88,105.9 70.1,88 48,88 34.9,88 23.3,94.3 16,104 16,45.4 68,22.4 112,26.4 130,30.6 146.3,27.1 160,16 143.9,5.8 124.4,0 104,0 Z" />
+      <path
+        id="Jotabe-letter-j-02"
+        mask="url(#letter-j-02-mask)"
+        d="m 112,16 v 368 h 48 V 16 Z" />
+      <path
+        id="Jotabe-letter-j-03"
+        mask="url(#letter-j-03-mask)"
+        d="M 112,368 C 96,368 48,352 48,272 V 239 L 0,257 v 39 c 0,52.2 35.8,88 80,88 h 32 c 8,-3.4 8,-13 0,-16 z" />
+    </g>
+    <g
+       id="Jotabe-letter-b"
+       transform="translate(72,48)">
+      <path
+        id="Jotabe-letter-b-01"
+        mask="url(#letter-b-01-mask)"
+        d="m 176,29 v 355 h 48 V 98.6 C 213.9,85.7 206.8,74.1 200.1,61.7 188.6,40.5 176,29 176,29 Z" />
+      <path
+        id="Jotabe-letter-b-02"
+        mask="url(#letter-b-02-mask)"
+        d="m 236,220 c 7.2,0 16.1,-2.9 22.9,-10.4 21.9,-24.3 16.4,-55.8 -8,-80.7 C 224,101.5 211.5,82.9 200.1,61.7 188.6,40.5 176,29 176,29 c 9.2,54.2 29.7,91 48,107 15.5,12.9 32,26.6 32,46 0,15.7 -4.5,26.6 -20,32.4 C 231.7,216 233.4,220 236,220 Z" />
+      <path
+        id="Jotabe-letter-b-03"
+        mask="url(#letter-b-03-mask)"
+        d="m 288,272 c 0,80 -48,96 -64,96 -9.5,3.1 -8,13.8 0,16 h 32 c 44.2,0 80,-35.8 80,-88 0,-53.1 -31.4,-86.4 -77.1,-86.4 -7.3,0 -15.1,1.9 -22.9,4.8 l -12,4.5 c -7.2,1.1 -7.1,17.4 0,16 12,-4.5 24.8,-9.8 34.2,-9.8 15.5,0 29.8,8.7 29.8,47 z" />
+    </g>
+    <rect
+      id="JB-piano-bottom" 
+      x="72"
+      y="344"
+      width="304"
+      height="4"
+    />
+  </g>
+  <rect
+    id="JB-cut-line" 
+    x="56"
+    y="344"
+    width="368"
+    height="4"
+  />
+  <g
+    id="JB-cut-text-box"
+    mask="url(#JB-cut-text-mask)"
+  >
+    <text
+      x="240"
+      y="389"
+      style="
+        font-weight: 500;
+        font-stretch:expanded;
+        font-size:42px;
+        line-height:1;
+        font-family:'Bebas Neue Pro';
+        text-align:center;
+        letter-spacing:0px;
+        text-anchor:middle"      
+      xml:space="preserve"
+      id="JB-cut-text">MASTERCLASSE AVRIL 2026</text>
+  </g>
+</svg>

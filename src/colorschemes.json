@@ -1,0 +1,104 @@
+{
+  "default": {
+    "base": {
+      "background": "#ffffff",
+      "text": "#191419"
+    },
+    "accent": {
+      "background": "#191419",
+      "text": "#ffffff"
+    },
+    "neutral": {
+      "background": "#edd2a6",
+      "text": "#191419"
+    },
+    "primary": {
+      "background": "#370f39",
+      "text": "#ffffff"
+    },
+    "secondary": {
+      "background": "#1e091f",
+      "text": "#ffffff"
+    }
+  },
+  "brass": {
+    "primary": {
+      "background": "#c58216",
+      "text": "#ffffff"
+    },
+    "secondary": {
+      "background": "#7d410c",
+      "text": "#ffffff"
+    }
+  },
+  "red": {
+    "primary": {
+      "background": "#c70000",
+      "text": "#ffffff"
+    },
+    "secondary": {
+      "background": "#660000",
+      "text": "#ffffff"
+    }
+  },
+  "promo2020": {
+    "primary": {
+      "background": "#e06020",
+      "text": "#ffffff"
+    },
+    "secondary": {
+      "background": "#f0a000",
+      "text": "#ffffff"
+    }
+  },
+  "promo2021": {
+    "primary": {
+      "background": "#7030a0",
+      "text": "#ffffff"
+    },
+    "secondary": {
+      "background": "#441d62",
+      "text": "#ffffff"
+    }
+  },
+  "promo2023": {
+    "primary": {
+      "background": "#a02040",
+      "text": "#ffffff"
+    },
+    "secondary": {
+      "background": "#621327",
+      "text": "#ffffff"
+    }
+  },
+  "promo2024": {
+    "primary": {
+      "background": "#249424",
+      "text": "#ffffff"
+    },
+    "secondary": {
+      "background": "#1a5b1a",
+      "text": "#ffffff"
+    }
+  },
+  "promo2025": {
+    "primary": {
+      "background": "#205090",
+      "text": "#ffffff"
+    },
+    "secondary": {
+      "background": "#153660",
+      "text": "#ffffff"
+    }
+  },
+  "promo2026": {
+    "primary": {
+      "background": "#f0a000",
+      "text": "#ffffff"
+    },
+    "secondary": {
+      "background": "#e06020",
+      "text": "#ffffff"
+    }
+  }
+}

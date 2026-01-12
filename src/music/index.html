@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jotabê - Stream pack - Music Player</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jsmediatags/3.9.5/jsmediatags.min.js"   integrity="sha512-YsR46MmyChktsyMMou+Bs74oCa/CDdwft7rJ5wlnmDzMj1mzqncsfJamEEf99Nk7IB0JpTMo5hS8rxB49FUktQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script type="text/javascript" src="./playlist.js"></script>
+    <script type="module" src="./player.ts"></script>
+  </head>
+
+  <body>
+    <audio autoplay id="audio"></audio>
+    <div id="player" class="--updating">
+        <div id="coverContainer">
+          <div id="cover">
+            <img src="./defaultCover.png" id="picture" />
+            <div id="qrcode"></div>
+            <img src="../assets/pause.svg" id="pause" />
+          </div>
+        </div>
+        <div id="track">
+          <div class="info">
+            <div id="artist"></div>
+            <div id="album"></div>
+          </div>
+          <div id="progress">
+            <div id="currentProgress"></div>
+          </div>
+          <div class="info">
+            <div id="title"></div>
+            <div id="original"></div>
+          </div>
+        </div>
+      </div>
+  </body>
+</html>
