@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, interactive-widget=resizes-content" />
+    <title>Jotabê - Stream pack - Stream Title</title>
+    <script type="module" crossorigin src="../assets/docks/streamTitle-BA4t1v3S.js"></script>
+    <link rel="modulepreload" crossorigin href="../assets/B5Qt9EMX.js">
+    <link rel="modulepreload" crossorigin href="../assets/DsqdWQfm.js">
+    <link rel="modulepreload" crossorigin href="../assets/B6qJfXvl.js">
+    <link rel="modulepreload" crossorigin href="../assets/ChUo-eeL.js">
+    <link rel="modulepreload" crossorigin href="../assets/ww_V6aJW.js">
+    <link rel="stylesheet" crossorigin href="../assets/streamTitle-Cg1tIi30.css">
+  </head>
+  <body>
+    <header>
+      <button class="btn btn--primary" id="nextTitleBtn">Titre Suivant</button>
+      <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%20version='1.1'%20viewBox='0%200%20512%20512'%3e%3cpath%20d='M268.078,512C126.693,511.962,12.108,397.316,12.146,255.932S126.83-0.038,268.215,0%20c96.559,0.026,184.888,54.38,228.428,140.565c7.695,15.91,1.035,35.046-14.875,42.74c-15.501,7.497-34.155,1.384-42.213-13.834%20C391.771,74.81,276.296,36.808,181.634,84.592S48.97,247.851,96.754,342.513s163.259,132.664,257.921,84.88%20c36.48-18.414,66.133-47.987,84.646-84.417c8.018-15.753,27.287-22.023,43.04-14.005c15.753,8.018,22.023,27.287,14.005,43.04l0,0%20C452.852,458.077,364.519,512.244,268.078,512z'/%3e%3c/svg%3e" id="updatingIcon" />
+      <div id="currentTitle"></div>
+      <button class="btn btn--neutral" id="decrementTitleBtn">-1</button>
+      <button class="btn btn--neutral" id="incrementTitleBtn">+1</button>
+    </header>
+    <ul class="list" id="streamTitles"></ul>
+
+    <footer>
+      <form id="newTitle">
+        <input id="title" type="text" value="" placeholder="[CATÉGORIE] Titre du stream - Description du stream !commands" />
+        <button class="btn btn--neutral" id="addTitleBtn">Ajouter</button>
+        <button class="btn btn--success" id="editTitleBtn">Modifier</button>
+        <button type="reset" class="btn btn--neutral" id="cancelEditTitleBtn">Annuler</button>
+      </form>
+    </footer>
+
+    <template id="listItemTemplate">
+      <li class="listItem">
+        <button class="btn btn--neutral action-activate">▷</button>
+
+        <div class="itemContent">
+          <div class="data-category"></div>
+          <div class="data-title">Stream Title #1</div>
+          <span class="data-subtitle"></span>
+          <span class="data-suffix"></span>
+        </div>
+
+        <div class="btn-group">
+          <button class="btn btn--neutral action-up">▲</button>
+          <button class="btn btn--neutral action-down">▼</button>
+          <button class="btn btn--neutral action-edit">✎</button>
+          <button class="btn btn--danger action-delete">✕</button>
+        </div>
+      </li>
+    </template>
+  </body>
+</html>
