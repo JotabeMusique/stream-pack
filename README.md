@@ -36,9 +36,11 @@ Plugins recommandés:
 
 ### Télécharger le pack
 
-Téléchargez le pack en cliquant sur [Download ZIP](./archive/refs/heads/main.zip) ou en clonant le dépot Git.
+Téléchargez le pack en cliquant sur [Download ZIP](https://github.com/JotabeMusique/stream-pack/archive/refs/heads/main.zip) ou en clonant le dépot Git.
 
-__ATTENTION: le pack est volumineux (~3.64Go) une fois cloné__
+Le fichier `resources/obs/background_video.webm` étant trop volumineux pour ce dépôt, une version allegée est incluse dans le pack. Pour avoir la version complète, il faudra la télécharger séparement (lien privé).
+
+__ATTENTION: le pack est volumineux (~700Mo) une fois cloné__
 
 ### Profile
 
@@ -160,7 +162,7 @@ Grâce à Source Docks, vous pourrez alors:
 
 Placez les Docks de la manière suivante pour une utilisation optimale d'OBS (activez `Docks > Full-Height Docks`):
 
-<img width="100%" src="./assets/obs/OBS-Docks-preview.png" />
+<img width="100%" src="./resources/obs/OBS-Docks-preview.png" />
 
 ### Sources modifiables
 
