@@ -27,6 +27,7 @@ Une mise à jour des plugins est possible mais pourrait avoir des bugs nécessit
 * obs-transition-table v0.3.1 - [Download](https://obsproject.com/forum/resources/transition-table.1174/)
 * obs-source-clone v0.2.0 - [Download](https://obsproject.com/forum/resources/source-clone.1632/)
 * obs-advanced-masks v1.5.4 - [Download](https://obsproject.com/forum/resources/advanced-masks.1856/)
+* TDR Nova vst - [Download](https://www.tokyodawn.net/tdr-nova/)
 
 Plugins recommandés:
 * obs-source-dock v0.5.0 - [Download](https://obsproject.com/forum/resources/source-dock.1317/)
@@ -45,6 +46,28 @@ __ATTENTION: le pack est volumineux (~700Mo) une fois cloné__
 ### Profile
 
 Ce stream pack est prévu pour un stream en 1080p60 (1920x1080 - 60 fps) uniquement.
+
+### TLDR / Cheatsheet
+
+Voici un résumé des étapes d'installation:
+
+01. Importer la collection `Jotabê-v1.scene-collection.json`
+02. Relocaliser le dossier `resources/obs`
+03. `Scene Collection > Check for Missing Files` à nouveau pour les shaders dans `resources/obs/shaders`
+04. Recréer le script `resources/obs/scripts/random_video_seek.lua` et l'activer pour la source `VIDEO_BACKGROUND`
+- Redémarrez OBS
+05. Mettre à jour les sources dans `_AUDIO`
+06. Mettre à jour la source `CAPTURE - WEBCAM` dans `_WEBCAM_SIDE` et modifier le filtre pour appliquer la LUT `Jotabe_Piano.cube`
+07. Mettre à jour la source `CAPTURE - ZENITHAL` dans `_WEBCAM_TOP` et modifier le filtre pour appliquer la LUT `Jotabe_Piano.cube`
+08. Mettre à jour les source d'écran dans `_SCREEN` (`Transform > Fit to Screen`) et `_GAME` si besoin
+09. Ajouter les sources de capture de fenêtre dans `_WINDOW` (`Transform > Fit to Screen`)
+10. S'authentifier sur la page du [Stream Pack](https://jotabemusique.github.io/stream-pack/)
+11. Mettre à jour l'URL de `WEB - Overlay`
+12. Mettre à jour les URLs de `WEB - Alerts` et `WEB - Chat` fournies par Streamlabs
+13. Mettre à jour l'URL de `WEB - Stream Together` fournie par Twitch
+14. Ajouter le dock `Stream Title` et agencer les docks
+15. (facultatif) Configurez vos raccourcis / Stream Deck
+16. Enjoy !
 
 ### Collection de scènes
 
@@ -68,11 +91,19 @@ Un script LUA est utilisé pour la vidéo d'arrière plan:
 
 Chaque source nécessitant une configuration est inclue dans une scène de calque (dont le nom est précédé par un `_`).
 
+#### _AUDIO
+
+Cette scène contient toutes les sources audio. Modifier les sources pour choisir les bons périphériques pour l'audio ou la capture de l'audio du Bureau.
+
+NOTE: la capture audio du bureau fonctionne différemment entre MacOS et Windows. La collection est prévue pour être chargée sur OBS pour MacOS. Si la collection est importée sur Windows, il faut recréer la capture de `DESKTOP` avec une source de capture pour Windows.
+
 #### _WEBCAM_SIDE
 
 Cette scène doit contenir la source `CAPTURE - WEBCAM` désignant la capture de périphérique vidéo pour la webcam vue de coté.
 
 La piste audio de cette source doit être désactivée (mute) et cachée.
+
+Réglez ensuite les filtres de cette source pour corriger la couleur, et appliquer un LUT fourni. Pour cela, réglez le filtre "Apply LUT" et selectionnez le fichier `Jotabe_Piano.cube` ou `Jotabe_Piano.png` présent dans le dossier `resources/obs/luts`.
 
 Supprimer la source `MOCK_VIDEO_WEBCAM` servant d'exemple.
 
@@ -82,14 +113,16 @@ Cette scène doit contenir la source `CAPTURE - ZENITHAL` désignant la capture 
 
 La piste audio de cette source doit être désactivée (mute) et cachée.
 
+Réglez ensuite les filtres de cette source pour corriger la couleur, et appliquer un LUT fourni. Pour cela, réglez le filtre "Apply LUT" et selectionnez le fichier `Jotabe_Piano.cube` ou `Jotabe_Piano.png` présent dans le dossier `resources/obs/luts`.
+
 Supprimer la source `MOCK_VIDEO_TOP` servant d'exemple.
 
-Pour facilité le cadrage de cette source, vous pouvez activer la source "GUDIES - Piano" pour afficher des guides pour correctement cadrer la webcam.
+Pour faciliter le cadrage de cette source, vous pouvez activer la source "GUDIES - Piano" pour afficher des guides pour correctement cadrer la webcam.
 
 #### _KEYBOARD
 
 Cette scène contient une version recadrée de la caméra zénithal. Seul le piano doit être visible.
-Si la source _WEBCAM_TOP a correctement été calivrée, aucun besoin de modification.
+Si la source _WEBCAM_TOP a correctement été calibrée, aucun besoin de modification.
 
 Le cadrage peut être ajusté en selectionnant `KEYBOARD-CROP > Filtres` puis en modifiant le filtre `QUADCROP`. Les positions des 4 coins du piano peuvent être ajustées manuellement.
 
@@ -181,18 +214,27 @@ Certaines sources peut être modifiée dynamiquement via des filtres (vous pouve
 
 ### Configuration Audio
 
-La configuration audio n'est pas intégrée au Stream pack, car selon l'OS, il y a plusieurs manière de le faire.
+La configuration audio est intégrée au Stream Pack au travers d'une scène dédiée.
 
-Vous devrez donc ajouter vous-même les sources d'entrée et filtres en fonction de votre setup audio.
-Préférez aussi une capture de l'audio du Bureau plutôt qu'une capture d'application, car cela peut entrainer des difficultés techniques.
+Les micros MIC 1 et MIC 2 ont une préconfiguration de filtres avec un EQ (le vst TDR Nova doit être installé), un compresseur (ratio 4, seuil -20dB, gain +15dB) et un limiteur à -1dB.
+
+Ajoutez autant de sources audio que nécessaire dans la scène `_AUDIO`, celle-ci doit être ensuite ajoutée dans chaque scène.
+
+Les sources Stream Together sont capturées et monitorées via OBS. Si vous utilisez la capture audio du bureau, assurez vous d'activer la capture sur la Piste 6, et mutez les sources Stream Together.
+
+Le routage choisir pour les sources audio est le suivant:
+- Piste 1: MASTER (toutes les sources)
+- Piste 2: audio du bureau + Stream Together
+- Piste 3: micros
+- Piste 4: musique
+- Piste 5: alertes
+- Piste 6: VOD (toutes sources sauf DESKTOP et MUSIC)
+
+NOTE: pour avoir la musique sur la VOD, activez la sortie 6 de `WEB - MUSIC PLAYER`, et éventuellement la piste 6 de `DESKTOP`.
 
 Pour capturer l'audio de logiciels de musique utilisant ASIO sur MacOS, utilisez un outils tel que [Loopback](https://rogueamoeba.com/loopback/) ou [Blackhole: Audio Loopback Driver](https://github.com/ExistentialAudio/BlackHole) avec un périphérique aggrégé.
 
 Pour capturer l'audio de logiciels de musique utilisant ASIO sur Windows, utilisez un outil tel que [Voicemeeter](https://voicemeeter.com/) (BANANA, POTATO ou simplement VB-Audio Virtual Cable) ou une carte son ayant une fonctionnalité de Loopback.
-
-_Recommandation: utilsez autant que possible des sources audio globales dans les paramètres d'OBS. En effet, cela permet de plus facilement mute/unmute toute source audio sans les ajouter à toutes les scènes._
-
-_Alternative: Créer une scène calque `_AUDIO` contenant toutes les captures de sources audio, et ajouter ce calque à toutes les scènes. Vous pourrez alors ajouter cette scène en tant que dock, et intéragir avec via un Stream Deck par exemple._
 
 ## Contribution
 
