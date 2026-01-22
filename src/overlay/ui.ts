@@ -8,6 +8,7 @@ import {
   GUEST_MAX_COUNT,
   PRESENTATION_MATCH,
   MONTHS,
+  ICONS_PATH,
 } from "../config";
 
 import {
@@ -332,7 +333,7 @@ export function setSocials(social: SocialInfo) {
     if ($title) $title.innerHTML = social.title ?? "";
     if ($description) $description.innerHTML = social.description ?? "";
     if ($link) $link.innerHTML = social.url ?? "";
-    if ($icon) $icon.innerHTML = `<img src="../assets/${social.icon}" />`;
+    if ($icon) $icon.innerHTML = `<img src="${ICONS_PATH + social.icon}" />`;
 
     $socials?.classList.remove("--hiding");
     $socials?.style.setProperty("--socialColor", social.color);

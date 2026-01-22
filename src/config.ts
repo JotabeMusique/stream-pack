@@ -1,5 +1,7 @@
 export const LOCALSTORAGE_PREFIX = 'jotabe-streampack:';
 
+export const ICONS_PATH = '../icons/';
+
 export const BACKGROUND_PIANO_LENGTH = 442;
 export const BACKGROUND_PIANO_PAD = 8;
 export const ANY_MENTION_REGEX = /@[a-z0-9_]+/gi;
