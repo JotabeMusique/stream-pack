@@ -1,0 +1,516 @@
+{
+	Tools = ordered() {
+		JotabeLabelRight = GroupOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "TILE_TITLE",
+					Source = "StyledText",
+					Name = "TITLE Text",
+				},
+				Input2 = InstanceInput {
+					SourceOp = "TILE_TITLE",
+					Source = "Font",
+					Name = "TITLE Font",
+					ControlGroup = 2,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "TILE_TITLE",
+					Source = "Style",
+					Name = "TITLE Style",
+					ControlGroup = 2,
+				},
+				Input4 = InstanceInput {
+					SourceOp = "TILE_TITLE",
+					Source = "Red1Clone",
+					Name = "TITLE Color",
+					ControlGroup = 3,
+					Default = 1,
+				},
+				Input5 = InstanceInput {
+					SourceOp = "TILE_TITLE",
+					Source = "Green1Clone",
+					Name = "TITLE Green 1",
+					ControlGroup = 3,
+					Default = 1,
+				},
+				Input6 = InstanceInput {
+					SourceOp = "TILE_TITLE",
+					Source = "Blue1Clone",
+					Name = "TITLE Blue 1",
+					ControlGroup = 3,
+					Default = 1,
+				},
+				Input7 = InstanceInput {
+					SourceOp = "TILE_TITLE",
+					Source = "Alpha1Clone",
+					Name = "TITLE Alpha 1",
+					ControlGroup = 3,
+					Default = 1,
+				},
+				Input8 = InstanceInput {
+					SourceOp = "TILE_TITLE",
+					Source = "Size",
+					Name = "TITLE Size",
+					Default = 0.025,
+				},
+				Input9 = InstanceInput {
+					SourceOp = "TILE_TITLE",
+					Source = "CharacterSpacingClone",
+					Name = "TITLE Tracking",
+					Default = 1,
+				},
+				Input10 = InstanceInput {
+					SourceOp = "TILE_TITLE",
+					Source = "LineSpacingClone",
+					Name = "TITLE Line Spacing",
+					Default = 1,
+				},
+				Input11 = InstanceInput {
+					SourceOp = "TILE_TITLE",
+					Source = "VerticalTopCenterBottom",
+					Name = "TITLE V Anchor",
+					Default = 2,
+				},
+				Input12 = InstanceInput {
+					SourceOp = "TILE_SUBTITLE",
+					Source = "StyledText",
+					Name = "SUBTITLE Text",
+				},
+				Input13 = InstanceInput {
+					SourceOp = "TILE_SUBTITLE",
+					Source = "Font",
+					Name = "SUBTITLE Font",
+					ControlGroup = 9,
+				},
+				Input14 = InstanceInput {
+					SourceOp = "TILE_SUBTITLE",
+					Source = "Style",
+					Name = "SUBTITLE Style",
+					ControlGroup = 9,
+				},
+				Input15 = InstanceInput {
+					SourceOp = "TILE_SUBTITLE",
+					Source = "Red1Clone",
+					Name = "SUBTITLE Color",
+					ControlGroup = 10,
+					Default = 1,
+				},
+				Input16 = InstanceInput {
+					SourceOp = "TILE_SUBTITLE",
+					Source = "Green1Clone",
+					Name = "SUBTITLE Green 1",
+					ControlGroup = 10,
+					Default = 1,
+				},
+				Input17 = InstanceInput {
+					SourceOp = "TILE_SUBTITLE",
+					Source = "Blue1Clone",
+					Name = "SUBTITLE Blue 1",
+					ControlGroup = 10,
+					Default = 1,
+				},
+				Input18 = InstanceInput {
+					SourceOp = "TILE_SUBTITLE",
+					Source = "Alpha1Clone",
+					Name = "SUBTITLE Alpha 1",
+					ControlGroup = 10,
+					Default = 1,
+				},
+				Input19 = InstanceInput {
+					SourceOp = "TILE_SUBTITLE",
+					Source = "Size",
+					Name = "SUBTITLE Size",
+					Default = 0.02,
+				},
+				Input20 = InstanceInput {
+					SourceOp = "TILE_SHAPE_BG",
+					Source = "TopLeftRed",
+					Name = "TILE Color",
+					ControlGroup = 12,
+					Default = 0.2156862745098,
+				},
+				Input21 = InstanceInput {
+					SourceOp = "TILE_SHAPE_BG",
+					Source = "TopLeftGreen",
+					Name = "TILE Top Left Green",
+					ControlGroup = 12,
+					Default = 0.0588235294118,
+				},
+				Input22 = InstanceInput {
+					SourceOp = "TILE_SHAPE_BG",
+					Source = "TopLeftBlue",
+					Name = "TILE Top Left Blue",
+					ControlGroup = 12,
+					Default = 0.2235294117647,
+				},
+				Input23 = InstanceInput {
+					SourceOp = "TILE_SHAPE_BG",
+					Source = "TopLeftAlpha",
+					Name = "TILE Top Left Alpha",
+					ControlGroup = 12,
+					Default = 1,
+				},
+				Input24 = InstanceInput {
+					SourceOp = "TILE_SHAPE",
+					Source = "MAX_WIDTH",
+					Name = "TILE Max Width",
+					Default = 0.5,
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "KeyframeStretcher1",
+					Source = "Result",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				TILE_TITLE = TextPlus {
+					ExtentSet = true,
+					NameSet = true,
+					Inputs = {
+						GlobalOut = Input { Value = 8000, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						Center = Input { Value = { 0.99, 0.845 }, },
+						CharacterOffset = Input {
+							SourceOp = "Path2",
+							Source = "Position",
+						},
+						Opacity1 = Input {
+							SourceOp = "TILE_TITLEOpacity1",
+							Source = "Value",
+						},
+						StyledText = Input { Value = "Morceau abordé en cours", },
+						Font = Input { Value = "DM Serif Display", },
+						Style = Input { Value = "Regular", },
+						Size = Input { Value = 0.025, },
+						VerticalTopCenterBottom = Input { Value = 2, },
+						VerticalJustificationNew = Input { Value = 3, },
+						HorizontalLeftCenterRight = Input { Value = 1, },
+						HorizontalJustificationNew = Input { Value = 3, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 715, 16.5 } },
+				},
+				Path2 = PolyPath {
+					DrawMode = "InsertAndModify",
+					CtrlWZoom = false,
+					Inputs = {
+						Displacement = Input {
+							SourceOp = "Path2Displacement",
+							Source = "Value",
+						},
+						PolyLine = Input {
+							Value = Polyline {
+								Points = {
+									{ Linear = true, LockY = true, X = -0.45, Y = -0.5, RX = -0.0166666666666667, RY = 0 },
+									{ Linear = true, LockY = true, X = -0.5, Y = -0.5, LX = 0.0166666666666667, LY = 0, RX = 0, RY = 0 },
+									{ Linear = true, LockY = true, X = -0.5, Y = -0.5, LX = 0, LY = 0, RX = 0.0166666666666667, RY = 0 },
+									{ Linear = true, LockY = true, X = -0.45, Y = -0.5, LX = -0.0166666666666667, LY = 0 }
+								}
+							},
+						}
+					},
+				},
+				Path2Displacement = BezierSpline {
+					SplineColor = { Red = 255, Green = 0, Blue = 255 },
+					CtrlWZoom = false,
+					KeyFrames = {
+						[15] = { 0, RH = { 25, 0.166666666666666 }, Flags = { Linear = true, LockedY = true } },
+						[45] = { 0.499999999999999, LH = { 35, 0.333333333333333 }, RH = { 54.6666666666667, 0.499999999999999 }, Flags = { LockedY = true } },
+						[74] = { 0.499999999999999, LH = { 64.3333333333331, 0.499999999999997 }, RH = { 83.666666666667, 0.666666666666672 }, Flags = { LockedY = true } },
+						[103] = { 1, LH = { 93.333333333333, 0.833333333333327 }, RH = { 103, 1 } },
+						[103.000000001] = { 1, LH = { 103, 1 }, RH = { 103, 1 }, Flags = { LockedY = true }, offset = 1e-09 },
+						[103.000000002] = { 1, LH = { 103, 1 }, offset = 2e-09 }
+					}
+				},
+				TILE_TITLEOpacity1 = BezierSpline {
+					SplineColor = { Red = 179, Green = 28, Blue = 244 },
+					CtrlWZoom = false,
+					KeyFrames = {
+						[15] = { 0, RH = { 25, 0 }, Flags = { Linear = true } },
+						[45] = { 1, LH = { 35, 1 }, RH = { 54.6666666666667, 1 } },
+						[74] = { 1, LH = { 64.3333333333331, 1 }, RH = { 83.666666666667, 1 } },
+						[103] = { 0, LH = { 93.333333333333, 0 } }
+					}
+				},
+				TILE_SUBTITLE = TextPlus {
+					ExtentSet = true,
+					NameSet = true,
+					Inputs = {
+						GlobalOut = Input { Value = 8000, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						Center = Input { Value = { 0.99, 0.845 }, },
+						CharacterOffset = Input {
+							SourceOp = "Path2_1",
+							Source = "Position",
+						},
+						Opacity1 = Input {
+							SourceOp = "TILE_SUBTITLEOpacity1",
+							Source = "Value",
+						},
+						StyledText = Input { Value = "twitch.tv/jotabemusique", },
+						Font = Input { Value = "Hanken Grotesk", },
+						Style = Input { Value = "Light", },
+						Size = Input { Value = 0.02, },
+						VerticalTopCenterBottom = Input { Value = -2, },
+						VerticalJustificationNew = Input { Value = 3, },
+						HorizontalLeftCenterRight = Input { Value = 1, },
+						HorizontalJustificationNew = Input { Value = 3, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 715, 49.5 } },
+				},
+				Path2_1 = PolyPath {
+					DrawMode = "InsertAndModify",
+					CtrlWZoom = false,
+					Inputs = {
+						Displacement = Input {
+							SourceOp = "Path2_1Displacement",
+							Source = "Value",
+						},
+						PolyLine = Input {
+							Value = Polyline {
+								Points = {
+									{ Linear = true, LockY = true, X = -0.45, Y = -0.5, RX = -0.0166666666666667, RY = 0 },
+									{ Linear = true, LockY = true, X = -0.5, Y = -0.5, LX = 0.0166666666666667, LY = 0, RX = 0, RY = 0 },
+									{ Linear = true, LockY = true, X = -0.5, Y = -0.5, LX = 0, LY = 0, RX = 0.0166666666666667, RY = 0 },
+									{ Linear = true, LockY = true, X = -0.45, Y = -0.5, LX = -0.0166666666666667, LY = 0 }
+								}
+							},
+						}
+					},
+				},
+				Path2_1Displacement = BezierSpline {
+					SplineColor = { Red = 255, Green = 0, Blue = 255 },
+					CtrlWZoom = false,
+					KeyFrames = {
+						[30] = { 0, RH = { 40, 0.166666666666666 }, Flags = { Linear = true, LockedY = true } },
+						[60] = { 0.499999999999999, LH = { 50, 0.333333333333333 }, RH = { 64.6666666666667, 0.499999999999999 }, Flags = { LockedY = true } },
+						[74] = { 0.499999999999999, LH = { 69.3333333333332, 0.499999999999998 }, RH = { 83.666666666667, 0.666666666666672 }, Flags = { LockedY = true } },
+						[103] = { 1, LH = { 93.333333333333, 0.833333333333327 }, RH = { 103, 1 } },
+						[103.000000001] = { 1, LH = { 103, 1 }, RH = { 103, 1 }, Flags = { LockedY = true }, offset = 1e-09 },
+						[103.000000002] = { 1, LH = { 103, 1 }, offset = 2e-09 }
+					}
+				},
+				TILE_SUBTITLEOpacity1 = BezierSpline {
+					SplineColor = { Red = 179, Green = 28, Blue = 244 },
+					CtrlWZoom = false,
+					KeyFrames = {
+						[30] = { 0, RH = { 40, 0 }, Flags = { Linear = true } },
+						[60] = { 1, LH = { 50, 1 }, RH = { 64.6666666666667, 1 } },
+						[74] = { 1, LH = { 69.3333333333332, 1 }, RH = { 83.666666666667, 1 } },
+						[103] = { 0, LH = { 93.333333333333, 0 } }
+					}
+				},
+				TILE_SHAPE_BG = Background {
+					ExtentSet = true,
+					NameSet = true,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "TILE_SHAPE",
+							Source = "Mask",
+						},
+						GlobalOut = Input { Value = 8000, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						TopLeftRed = Input { Value = 0.2156862745098, },
+						TopLeftGreen = Input { Value = 0.0588235294118, },
+						TopLeftBlue = Input { Value = 0.2235294117647, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 495, -16.5 } },
+				},
+				TILE_SHAPE = PolylineMask {
+					DrawMode = "ModifyOnly",
+					DrawMode2 = "InsertAndModify",
+					NameSet = true,
+					Inputs = {
+						animate = Input {
+							Value = Number {
+								Value = 1
+							},
+						},
+						MotionBlur = Input { Value = 1, },
+						JoinStyle = Input { Value = 2, },
+						MiterLimit = Input { Value = 4, },
+						CapStyle = Input { Value = 0, },
+						MaskWidth = Input { Value = 320, },
+						MaskHeight = Input { Value = 240, },
+						PixelAspect = Input { Value = { 1, 1 }, },
+						Center = Input {
+							Value = { 1.3686022477781, 0.5 },
+							Expression = "Point(1.5 - (0.5 * TILE_SHAPE.SHOW * TILE_SHAPE.MAX_WIDTH), 0.5)",
+						},
+						Polyline = Input {
+							Value = Polyline {
+								Closed = true,
+								Points = {
+									{ Linear = true, X = -0.494166666666667, Y = 0.388888888888889, LX = 0.164722222222222, LY = 0, RX = -0.00194444444444453, RY = -0.0092592592592593 },
+									{ X = -0.5, Y = 0.361111111111111, LX = 0.00194444444444442, LY = 0.0092592592592593, RX = 0.0178125000000001, RY = 0 },
+									{ Linear = true, X = -0.4465625, Y = 0.361111111111111, LX = -0.0178125, LY = 0, RX = -0.00291666666666668, RY = -0.0277777777777778 },
+									{ X = -0.413854166666667, Y = 0.305555555555555, LX = -0.0221875, LY = 0, RX = 0.137951388888889, RY = 0 },
+									{ Linear = true, X = 0, Y = 0.305555555555555, LX = -0.137951388888889, LY = 0, RX = 0, RY = 0.0277777777777778 },
+									{ Linear = true, X = 0, Y = 0.388888888888889, LX = 0, LY = -0.0277777777777778, RX = -0.164722222222222, RY = 0 }
+								}
+							},
+						},
+						Polyline2 = Input {
+							Value = Polyline {
+							},
+							Disabled = true,
+						},
+						MAX_WIDTH = Input { Value = 0.5, },
+						SHOW = Input {
+							SourceOp = "TILE_SHAPESHOW",
+							Source = "Value",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 550, -82.5 } },
+					UserControls = ordered() { MAX_WIDTH = { INP_MaxAllowed = 1000000, INP_Integer = false, INPID_InputControl = "SliderControl", INP_MaxScale = 1, INP_Default = 1, INP_MinScale = 0, INP_MinAllowed = -1000000, LINKID_DataType = "Number", INP_External = false, INP_SplineType = "Default", LINKS_Name = "MAX_WIDTH", }, SHOW = { INP_MaxAllowed = 1, INP_Integer = false, INP_MinAllowed = 0, LINKID_DataType = "Number", LINKS_Name = "SHOW", INPID_InputControl = "SliderControl", INP_SplineType = "Default", INP_Default = 1, } }
+				},
+				TILE_SHAPESHOW = BezierSpline {
+					SplineColor = { Red = 201, Green = 159, Blue = 249 },
+					CtrlWZoom = false,
+					KeyFrames = {
+						[0] = { 0, RH = { 0, 0 }, Flags = { Linear = true } },
+						[30] = { 1, LH = { 15.1097178683386, 1 }, RH = { 49.6666666666667, 1 } },
+						[89] = { 1, LH = { 69.3333333333332, 1 }, RH = { 104.151515151515, 1 } },
+						[119] = { 0, LH = { 119, 0 } }
+					}
+				},
+				TILE_BG = Background {
+					ExtentSet = true,
+					NameSet = true,
+					Inputs = {
+						GlobalOut = Input { Value = 8000, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftAlpha = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 440, 49.5 } },
+				},
+				BACKGROUND = Background {
+					ExtentSet = true,
+					NameSet = true,
+					Inputs = {
+						GlobalOut = Input { Value = 8000, },
+						Width = Input { Value = 1920, },
+						Height = Input { Value = 1080, },
+						UseFrameFormatSettings = Input { Value = 1, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						TopLeftAlpha = Input { Value = 0, },
+						StartRenderScripts = Input { Value = 1, },
+						EndRenderScripts = Input { Value = 1, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 440, 115.5 } },
+				},
+				TILE = MultiMerge {
+					NameSet = true,
+					Inputs = {
+						EffectMask = Input {
+							SourceOp = "TILE_SHAPE",
+							Source = "Mask",
+						},
+						LayerOrder = Input { Value = ScriptVal { { [0] = 3, 2, 1, 4 } }, },
+						Background = Input {
+							SourceOp = "TILE_SHAPE_BG",
+							Source = "Output",
+						},
+						["Layer1.Foreground"] = Input {
+							SourceOp = "TILE_TITLE",
+							Source = "Output",
+						},
+						LayerName1 = Input { Value = "MultiMerge1 Layer", },
+						["Layer2.Foreground"] = Input {
+							SourceOp = "TILE_BG",
+							Source = "Output",
+						},
+						LayerName2 = Input { Value = "MultiMerge2 Layer", },
+						LayerName3 = Input { Value = "TILE_RIGHT_BG Layer", },
+						["Layer4.Foreground"] = Input {
+							SourceOp = "TILE_SUBTITLE",
+							Source = "Output",
+						},
+						LayerName4 = Input { Value = "TILE_RIGHT_BG Layer", }
+					},
+					ViewInfo = OperatorInfo { Pos = { 550, 49.5 } },
+				},
+				TITLE = Merge {
+					NameSet = true,
+					Inputs = {
+						Blend = Input {
+							SourceOp = "TITLEBlend",
+							Source = "Value",
+						},
+						Background = Input {
+							SourceOp = "BACKGROUND",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "TILE",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 550, 115.5 } },
+				},
+				TITLEBlend = BezierSpline {
+					SplineColor = { Red = 205, Green = 205, Blue = 205 },
+					CtrlWZoom = false,
+					KeyFrames = {
+						[5] = { 0, RH = { 5, 0 }, Flags = { Linear = true } },
+						[30] = { 1, LH = { 17.3737373737374, 1 }, RH = { 49.6666666666667, 1 } },
+						[89] = { 1, LH = { 69.3333333333333, 1 }, RH = { 102.131313131313, 1 } },
+						[115] = { 0, LH = { 115, 0 } }
+					}
+				},
+				DropShadow1 = ofx.com.blackmagicdesign.resolvefx.DropShadow {
+					Inputs = {
+						Source = Input {
+							SourceOp = "TITLE",
+							Source = "Output",
+						},
+						shadowStrength = Input { Value = 0.3, },
+						shadowAngle = Input { Value = 20.56, },
+						ShadowDistance = Input { Value = 0.02, },
+						shadowBlur = Input { Value = 0.33, },
+						shadowColorRed = Input { Value = 0, },
+						shadowColorGreen = Input { Value = 0, },
+						shadowColorBlue = Input { Value = 0, },
+						isLegacyComp = Input { Value = 0, },
+						blendGroup = Input { Value = 0, },
+						blendIn = Input { Value = 1, },
+						blend = Input { Value = 0, },
+						ignoreContentShape = Input { Value = 0, },
+						legacyIsProcessRGBOnly = Input { Value = 0, },
+						IsNoTemporalFramesReqd = Input { Value = 0, },
+						refreshTrigger = Input { Value = 1, },
+						srcProcessingAlphaMode = Input { Value = 2, },
+						dstProcessingAlphaMode = Input { Value = 2, },
+						resolvefxVersion = Input { Value = "2.0", }
+					},
+					ViewInfo = OperatorInfo { Pos = { 660, 115.5 } },
+				},
+				KeyframeStretcher1 = KeyStretcher {
+					CtrlWZoom = false,
+					Inputs = {
+						Keyframes = Input {
+							SourceOp = "DropShadow1",
+							Source = "Output",
+						},
+						SourceEnd = Input { Value = 119, },
+						StretchStart = Input { Value = 60, },
+						StretchEnd = Input { Value = 70, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 770, 115.5 } },
+				}
+			},
+		}
+	},
+	ActiveTool = "JotabeLabelRight"
+}

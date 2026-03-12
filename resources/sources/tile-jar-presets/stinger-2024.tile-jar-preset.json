@@ -1,0 +1,212 @@
+{
+  "version": 1,
+  "width": 720,
+  "height": 480,
+  "safeAreaSize": 128,
+  "render": {
+    "width": 3840,
+    "height": 2160,
+    "duration": 4,
+    "frameRate": 60,
+    "loop": false
+  },
+  "grid": {
+    "originX": -869,
+    "originY": 644,
+    "countX": 13,
+    "countY": 25,
+    "lines": 25,
+    "columns": 13,
+    "order": "up-right"
+  },
+  "tile": {
+    "width": 128,
+    "height": 48,
+    "lineDeltaX": 32,
+    "lineDeltaY": -28,
+    "columnDeltaX": 128,
+    "columnDeltaY": -16,
+    "path": "M 80,2 0,32 V 48 L 48,30 c 2.646256,15.007661 19.970071,24.511957 39.939453,17.023438 L 128,32 V 16 l -8.06055,3.023438 C 99.970066,26.511958 82.646256,17.007661 80,2 Z",
+    "variants": [
+      "a",
+      "b",
+      "c",
+      "d",
+      "e"
+    ],
+    "variantLineShift": 4,
+    "variantColumnShift": 1,
+    "transformOriginX": 64,
+    "transformOriginY": 24
+  },
+  "variants": [
+    {
+      "fill": "#249424",
+      "stroke": null,
+      "opacity": 1,
+      "strokeWidth": 0,
+      "transform": null
+    },
+    {
+      "fill": "#7d410c",
+      "stroke": null,
+      "opacity": 1,
+      "strokeWidth": 0,
+      "transform": null
+    },
+    {
+      "fill": "#222222",
+      "stroke": null,
+      "opacity": 1,
+      "strokeWidth": 0,
+      "transform": null
+    },
+    {
+      "fill": "#c58216",
+      "stroke": null,
+      "opacity": 1,
+      "strokeWidth": 0,
+      "transform": null
+    },
+    {
+      "fill": "#1a5b1a",
+      "stroke": null,
+      "opacity": 1,
+      "strokeWidth": 0,
+      "transform": null
+    },
+    {
+      "fill": "#111111",
+      "stroke": null,
+      "opacity": 1,
+      "strokeWidth": 0,
+      "transform": null
+    }
+  ],
+  "variantLineShift": 5,
+  "variantColumnShift": 1,
+  "tileAnimations": [
+    {
+      "duration": "2s",
+      "easing": "linear",
+      "delayPerTile": "0s",
+      "delayPerLine": "1s / var(--lines)",
+      "delayPerColumn": "1s  / var(--lines)",
+      "steps": [
+        {
+          "progress": 0,
+          "fill": null,
+          "stroke": null,
+          "opacity": 0,
+          "strokeWidth": null,
+          "transform": ""
+        },
+        {
+          "progress": 0.3,
+          "fill": null,
+          "stroke": null,
+          "opacity": 1,
+          "strokeWidth": null,
+          "transform": ""
+        },
+        {
+          "progress": 0.7,
+          "fill": null,
+          "stroke": null,
+          "opacity": 1,
+          "strokeWidth": null,
+          "transform": ""
+        },
+        {
+          "progress": 1,
+          "fill": null,
+          "stroke": null,
+          "opacity": 0,
+          "strokeWidth": null,
+          "transform": ""
+        }
+      ],
+      "enabled": true,
+      "composition": "replace"
+    },
+    {
+      "duration": "2s",
+      "easing": "linear",
+      "delayPerTile": "0s",
+      "delayPerLine": "1s / var(--lines)",
+      "delayPerColumn": "1s  / var(--lines)",
+      "steps": [
+        {
+          "progress": 0,
+          "fill": null,
+          "stroke": null,
+          "opacity": null,
+          "strokeWidth": null,
+          "transform": "scale(0)"
+        },
+        {
+          "progress": 0.3,
+          "fill": null,
+          "stroke": null,
+          "opacity": null,
+          "strokeWidth": null,
+          "transform": "scale(1)"
+        },
+        {
+          "progress": 0.7,
+          "fill": null,
+          "stroke": null,
+          "opacity": null,
+          "strokeWidth": null,
+          "transform": "scale(1)"
+        },
+        {
+          "progress": 1,
+          "fill": null,
+          "stroke": null,
+          "opacity": null,
+          "strokeWidth": null,
+          "transform": "scale(0)"
+        }
+      ],
+      "enabled": true,
+      "composition": "add"
+    }
+  ],
+  "gridAnimations": [],
+  "animations": [
+    {
+      "duration": "5s",
+      "easing": "linear",
+      "delayPerTile": "0s",
+      "delayPerLine": "calc(5s / var(--lines))",
+      "delayPerColumn": "0s",
+      "steps": [
+        {
+          "progress": 0,
+          "fill": null,
+          "stroke": null,
+          "opacity": null,
+          "strokeWidth": null,
+          "transform": "translate(0, 0)"
+        },
+        {
+          "progress": 0.5,
+          "fill": null,
+          "stroke": null,
+          "opacity": null,
+          "strokeWidth": null,
+          "transform": "translate(-32px, 12px)"
+        },
+        {
+          "progress": 1,
+          "fill": null,
+          "stroke": null,
+          "opacity": null,
+          "strokeWidth": null,
+          "transform": "translate(0, 0)"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="3840"
+   height="2160"
+   viewBox="0 0 3840 2160"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   sodipodi:docname="tile-title.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="px"
+     inkscape:zoom="0.25"
+     inkscape:cx="1428"
+     inkscape:cy="168"
+     inkscape:window-width="3840"
+     inkscape:window-height="2131"
+     inkscape:window-x="2551"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g17"
+     showguides="true">
+    <sodipodi:guide
+       position="0,1920"
+       orientation="0,1"
+       id="guide5"
+       inkscape:locked="false"
+       inkscape:label=""
+       inkscape:color="rgb(0,134,229)" />
+    <sodipodi:guide
+       position="1920,2160"
+       orientation="-1,0"
+       id="guide13"
+       inkscape:locked="false"
+       inkscape:label=""
+       inkscape:color="rgb(0,134,229)" />
+    <sodipodi:guide
+       position="64,2160"
+       orientation="-1,0"
+       id="guide16"
+       inkscape:locked="false"
+       inkscape:label=""
+       inkscape:color="rgb(0,134,229)" />
+    <sodipodi:guide
+       position="0,112"
+       orientation="0,1"
+       id="guide1"
+       inkscape:locked="false"
+       inkscape:label=""
+       inkscape:color="rgb(0,134,229)" />
+    <sodipodi:guide
+       position="3776,2160"
+       orientation="-1,0"
+       id="guide2"
+       inkscape:label=""
+       inkscape:locked="false"
+       inkscape:color="rgb(0,134,229)" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1">
+    <rect
+       x="205.2"
+       y="0"
+       width="1037.2921"
+       height="120"
+       id="rect17" />
+    <rect
+       x="320"
+       y="120"
+       width="906"
+       height="60"
+       id="rect16" />
+    <rect
+       x="256"
+       y="60"
+       width="986.49213"
+       height="120"
+       id="rect15" />
+    <rect
+       x="1310.0063"
+       y="0"
+       width="1089.9937"
+       height="120"
+       id="rect14" />
+    <rect
+       x="22.4"
+       y="0"
+       width="1220.092"
+       height="60"
+       id="rect12" />
+    <rect
+       x="1310.0063"
+       y="120"
+       width="1227.5938"
+       height="60"
+       id="rect11" />
+    <rect
+       x="1310.0063"
+       y="120"
+       width="1227.5938"
+       height="60"
+       id="rect10" />
+    <rect
+       x="1264.9969"
+       y="120"
+       width="1272.6031"
+       height="60"
+       id="rect9" />
+    <rect
+       x="1264.9969"
+       y="120"
+       width="1272.6031"
+       height="60"
+       id="rect8" />
+    <rect
+       x="22.4"
+       y="0"
+       width="1265.1016"
+       height="60"
+       id="rect7" />
+    <rect
+       x="22.4"
+       y="0"
+       width="1265.1016"
+       height="60"
+       id="rect6" />
+    <rect
+       x="62"
+       y="0"
+       width="1225.5016"
+       height="60"
+       id="rect5" />
+  </defs>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Title"
+     transform="translate(650.55,-112)"
+     style="display:inline">
+    <g
+       id="g31"
+       inkscape:label="Masks"
+       transform="translate(-10.8,1980)">
+      <path
+         style="display:inline;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.25px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 324.0625,0 v 45 h -489.44 L -148.5,0 Z"
+         id="path30"
+         inkscape:label="tile-right-mask"
+         transform="matrix(4,0,0,4,1904,0)"
+         sodipodi:nodetypes="ccccc" />
+      <path
+         style="display:inline;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.25px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 327.5,0 -16.8775,45 h -470.56 V 0 Z"
+         id="path31"
+         inkscape:label="tile-left-mask"
+         transform="scale(4)"
+         sodipodi:nodetypes="ccccc" />
+    </g>
+    <path
+       style="display:inline;fill:#edd2a6;fill-opacity:1;stroke:none;stroke-width:4px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 1231.68,1980 v 180 h 1935.37 l 22.4,-60 h -34.4 c -85.6,0 -136.8,-60 -125.6,-120 z"
+       id="path3"
+       inkscape:label="Tile_Right"
+       sodipodi:nodetypes="ccccscc"
+       clip-path="none"
+       mask="none" />
+    <path
+       style="display:inline;fill:#370f39;fill-opacity:1;stroke:none;stroke-width:4px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -628.15,1980 -22.4,60 h 205.2 c -11.2,60 40.4,120 125.6,120 H 1299.2 v -180 z"
+       id="path2"
+       inkscape:label="Tile_Left"
+       sodipodi:nodetypes="cccsccc"
+       clip-path="none"
+       mask="none" />
+    <text
+       xml:space="preserve"
+       style="font-size:96.0002px;line-height:1.25;font-family:'DM Serif Display';-inkscape-font-specification:'DM Serif Display, Normal';stroke-width:1"
+       x="1299.8601"
+       y="2076.928"
+       id="Player_Name"
+       inkscape:label="Player_Name"><tspan
+         sodipodi:role="line"
+         id="tspan27"
+         x="1299.8601"
+         y="2076.928"
+         style="stroke-width:1">Nom du Pianiste</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:96.0002px;line-height:1.25;font-family:'DM Serif Display';-inkscape-font-specification:'DM Serif Display, Normal';text-align:end;text-anchor:end;fill:#ffffff;stroke-width:1"
+       x="1216.5571"
+       y="2076.928"
+       id="text28"
+       inkscape:label="Song_Artist"><tspan
+         sodipodi:role="line"
+         id="tspan28"
+         x="1216.5571"
+         y="2076.928"
+         style="text-align:end;text-anchor:end;fill:#ffffff;stroke-width:1">Nom de l'Artiste</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:52px;line-height:1.25;font-family:'DM Serif Display';-inkscape-font-specification:'DM Serif Display, Normal';stroke-width:1"
+       x="1299.8601"
+       y="2140.928"
+       id="Player_Title"
+       inkscape:label="Player_Title"><tspan
+         sodipodi:role="line"
+         id="tspan29"
+         x="1299.8601"
+         y="2140.928"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:52px;font-family:'Hanken Grotesk';-inkscape-font-specification:'Hanken Grotesk';stroke-width:1">Titre du Pianiste</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:52px;line-height:1.25;font-family:'DM Serif Display';-inkscape-font-specification:'DM Serif Display, Normal';text-align:end;text-anchor:end;fill:#ffffff;stroke-width:1"
+       x="1216.5571"
+       y="2140.928"
+       id="Song_Title"
+       inkscape:label="Song_Title"><tspan
+         sodipodi:role="line"
+         id="tspan30"
+         x="1216.5571"
+         y="2140.928"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:52px;font-family:'Hanken Grotesk';-inkscape-font-specification:'Hanken Grotesk';text-align:end;text-anchor:end;fill:#ffffff;stroke-width:1">Titre du morceau</tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="g17"
+     inkscape:label="Label_RIGHT"
+     transform="translate(650.55,-112)"
+     style="display:inline">
+    <path
+       style="display:inline;fill:#370f39;fill-opacity:1;stroke:none;stroke-width:4px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 1291.85,352 -22.4,60 h 205.2 c -11.2,60 40.4,120 125.6,120 h 1589.2 V 352 Z"
+       id="path14"
+       inkscape:label="Tile_Left"
+       sodipodi:nodetypes="cccsccc"
+       clip-path="none"
+       mask="none" />
+    <text
+       xml:space="preserve"
+       style="font-size:96.0002px;line-height:1.25;font-family:'DM Serif Display';-inkscape-font-specification:'DM Serif Display, Normal';text-align:end;text-anchor:end;fill:#ffffff;stroke-width:1"
+       x="3128.3298"
+       y="448.92798"
+       id="text15"
+       inkscape:label="Song_Artist"><tspan
+         sodipodi:role="line"
+         id="tspan15"
+         x="3128.3298"
+         y="448.92798"
+         style="text-align:end;text-anchor:end;fill:#ffffff;stroke-width:1">Nom de l'Artiste</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:52px;line-height:1.25;font-family:'DM Serif Display';-inkscape-font-specification:'DM Serif Display, Normal';text-align:end;text-anchor:end;fill:#ffffff;stroke-width:1"
+       x="3128.3298"
+       y="512.92798"
+       id="text17"
+       inkscape:label="Song_Title"><tspan
+         sodipodi:role="line"
+         id="tspan17"
+         x="3128.3298"
+         y="512.92798"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:52px;font-family:'Hanken Grotesk';-inkscape-font-specification:'Hanken Grotesk';text-align:end;text-anchor:end;fill:#ffffff;stroke-width:1">Titre du morceau</tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="g10"
+     inkscape:label="Label_LEFT"
+     transform="translate(650.55,-112)"
+     style="display:inline">
+    <path
+       style="display:inline;fill:#edd2a6;fill-opacity:1;stroke:none;stroke-width:4px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -650.55,352 v 180 h 1897.6 l 22.4,-60 h -34.4 c -85.6,0 -136.8,-60 -125.6,-120 z"
+       id="path6"
+       inkscape:label="tile-right"
+       sodipodi:nodetypes="ccccscc"
+       clip-path="none"
+       mask="none" />
+    <text
+       xml:space="preserve"
+       style="font-size:96.0002px;line-height:1.25;font-family:'DM Serif Display';-inkscape-font-specification:'DM Serif Display, Normal';stroke-width:1"
+       x="-587.32996"
+       y="448.92798"
+       id="text7"
+       inkscape:label="Player_Name"><tspan
+         sodipodi:role="line"
+         id="tspan7"
+         x="-587.32996"
+         y="448.92798"
+         style="stroke-width:1">Nom du Pianiste</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:52px;line-height:1.25;font-family:'DM Serif Display';-inkscape-font-specification:'DM Serif Display, Normal';stroke-width:1"
+       x="-587.32996"
+       y="512.92798"
+       id="text9"
+       inkscape:label="Player_Title"><tspan
+         sodipodi:role="line"
+         id="tspan9"
+         x="-587.32996"
+         y="512.92798"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:52px;font-family:'Hanken Grotesk';-inkscape-font-specification:'Hanken Grotesk';stroke-width:1">Titre du Pianiste</tspan></text>
+  </g>
+</svg>

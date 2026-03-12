@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="128"
+   height="48"
+   viewBox="0 0 128 48"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   sodipodi:docname="single-tile.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="px"
+     inkscape:zoom="5.6568544"
+     inkscape:cx="65.672541"
+     inkscape:cy="79.019181"
+     inkscape:window-width="3840"
+     inkscape:window-height="2131"
+     inkscape:window-x="2551"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     showguides="true">
+    <inkscape:grid
+       id="grid2"
+       units="px"
+       originx="0"
+       originy="0"
+       spacingx="16"
+       spacingy="16"
+       empcolor="#0099e5"
+       empopacity="0.30196078"
+       color="#0099e5"
+       opacity="0.14901961"
+       empspacing="4"
+       enabled="true"
+       visible="true" />
+    <sodipodi:guide
+       position="41.012193,5.3968168"
+       orientation="-0.35112344,0.93632918"
+       id="guide2"
+       inkscape:locked="false"
+       inkscape:label=""
+       inkscape:color="rgb(0,134,229)" />
+    <sodipodi:guide
+       position="128,16"
+       orientation="-0.35112352,0.93632915"
+       id="guide3"
+       inkscape:label=""
+       inkscape:locked="false"
+       inkscape:color="rgb(0,134,229)" />
+    <sodipodi:guide
+       position="128,32"
+       orientation="-0.35112352,0.93632915"
+       id="guide4"
+       inkscape:label=""
+       inkscape:locked="false"
+       inkscape:color="rgb(0,134,229)" />
+    <sodipodi:guide
+       position="0,16"
+       orientation="-0.35112352,0.93632915"
+       id="guide5"
+       inkscape:label=""
+       inkscape:locked="false"
+       inkscape:color="rgb(0,134,229)" />
+    <sodipodi:guide
+       position="48,18"
+       orientation="0.98480775,0.17364818"
+       id="guide6"
+       inkscape:locked="false"
+       inkscape:label=""
+       inkscape:color="rgb(0,134,229)" />
+    <sodipodi:guide
+       position="80,46.000008"
+       orientation="0.98480775,0.17364818"
+       id="guide7"
+       inkscape:label=""
+       inkscape:locked="false"
+       inkscape:color="rgb(0,134,229)" />
+    <sodipodi:guide
+       position="64,16"
+       orientation="0.98480775,0.17364818"
+       id="guide8"
+       inkscape:label=""
+       inkscape:locked="false"
+       inkscape:color="rgb(0,134,229)" />
+    <sodipodi:guide
+       position="0,-64"
+       orientation="-0.35112352,0.93632915"
+       id="guide1"
+       inkscape:label=""
+       inkscape:locked="false"
+       inkscape:color="rgb(0,134,229)" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="tile"
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 80,2 0,32 V 48 L 48,30 c 2.646256,15.007661 19.970071,24.511957 39.939453,17.023438 L 128,32 V 16 l -8.06055,3.023438 C 99.970066,26.511958 82.646256,17.007661 80,2 Z"
+       sodipodi:nodetypes="ccccccccc"
+       inkscape:label="tile" />
+    <path
+       id="tile-enlarged"
+       style="display:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 80,2 0,32 v 80 L 176,45.999983 V -1.7500048 L 119.93945,19.273438 C 99.970066,26.761958 82.646256,17.007661 80,2 Z"
+       sodipodi:nodetypes="ccccccc"
+       inkscape:label="tile-enlarged" />
+  </g>
+</svg>

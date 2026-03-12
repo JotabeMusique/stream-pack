@@ -1,0 +1,198 @@
+{
+  "version": 1,
+  "width": 576,
+  "height": 176,
+  "safeAreaSize": 1024,
+  "render": {
+    "width": 576,
+    "height": 176,
+    "duration": 10,
+    "frameRate": 60,
+    "loop": true,
+    "seed": 0
+  },
+  "grid": {
+    "originX": -4000,
+    "originY": 2000,
+    "countX": 32,
+    "countY": 96,
+    "lines": 3,
+    "columns": 5,
+    "order": "up-right",
+    "transform": "rotate(20.56deg)"
+  },
+  "tile": {
+    "width": 128,
+    "height": 48,
+    "lineDeltaX": 32,
+    "lineDeltaY": -28,
+    "columnDeltaX": 128,
+    "columnDeltaY": -16,
+    "path": "M 80,2 0,32 v 80 L 176,45.999983 V -1.7500048 L 119.93945,19.273438 C 99.970066,26.761958 82.646256,17.007661 80,2 Z",
+    "variants": [
+      "a",
+      "b",
+      "c",
+      "d",
+      "e"
+    ],
+    "variantLineShift": 4,
+    "variantColumnShift": 1
+  },
+  "variants": [
+    {
+      "fill": "#370f39",
+      "stroke": null,
+      "opacity": 1,
+      "strokeWidth": 0,
+      "transform": null
+    },
+    {
+      "fill": "#1e091f",
+      "stroke": null,
+      "opacity": 1,
+      "strokeWidth": 0,
+      "transform": null
+    },
+    {
+      "fill": "#191419",
+      "stroke": null,
+      "opacity": 1,
+      "strokeWidth": 0,
+      "transform": null
+    },
+    {
+      "fill": "#c58216",
+      "stroke": null,
+      "opacity": 1,
+      "strokeWidth": 0,
+      "transform": null
+    },
+    {
+      "fill": "#7d410c",
+      "stroke": null,
+      "opacity": 1,
+      "strokeWidth": 0,
+      "transform": null
+    }
+  ],
+  "variantLineShift": 1,
+  "variantColumnShift": 1,
+  "tileAnimations": [
+    {
+      "duration": "5s",
+      "easing": "ease",
+      "delayPerTile": "0s",
+      "delayPerLine": "calc(5s / var(--lines) - 5s)",
+      "delayPerColumn": "0s",
+      "steps": [
+        {
+          "progress": 0,
+          "fill": null,
+          "stroke": null,
+          "opacity": null,
+          "strokeWidth": null,
+          "transform": ""
+        },
+        {
+          "progress": 0.5,
+          "fill": null,
+          "stroke": null,
+          "opacity": null,
+          "strokeWidth": null,
+          "transform": "translate(\ncalc(var(--tile-lineDeltaX) * -0.5),\ncalc(var(--tile-lineDeltaY)* -0.5)\n)"
+        },
+        {
+          "progress": 1,
+          "fill": null,
+          "stroke": null,
+          "opacity": null,
+          "strokeWidth": null,
+          "transform": "translate(0, 0)"
+        }
+      ],
+      "enabled": false,
+      "composition": "replace"
+    },
+    {
+      "duration": "2s",
+      "easing": "ease-in-out",
+      "delayPerTile": "0s",
+      "delayPerLine": "0s",
+      "delayPerColumn": "calc(2s / var(--columns) - 2s)",
+      "steps": [
+        {
+          "progress": 0,
+          "fill": null,
+          "stroke": null,
+          "opacity": null,
+          "strokeWidth": null,
+          "transform": ""
+        },
+        {
+          "progress": 0.3,
+          "fill": null,
+          "stroke": null,
+          "opacity": null,
+          "strokeWidth": null,
+          "transform": "translate(\ncalc(var(--tile-width) * 0.15),\ncalc(var(--tile-height) * -0.15)\n)"
+        }
+      ],
+      "enabled": true,
+      "composition": "add"
+    }
+  ],
+  "gridAnimations": [
+    {
+      "duration": "10s",
+      "easing": "linear",
+      "steps": [
+        {
+          "progress": 0,
+          "transform": ""
+        },
+        {
+          "progress": 1,
+          "transform": "translate(calc(var(--tile-columnDeltaX)  * var(--variants)), calc(var(--tile-columnDeltaY)  * var(--variants)))"
+        }
+      ],
+      "enabled": true,
+      "composition": "add"
+    }
+  ],
+  "animations": [
+    {
+      "duration": "5s",
+      "easing": "linear",
+      "delayPerTile": "0s",
+      "delayPerLine": "calc(5s / var(--lines))",
+      "delayPerColumn": "0s",
+      "steps": [
+        {
+          "progress": 0,
+          "fill": null,
+          "stroke": null,
+          "opacity": null,
+          "strokeWidth": null,
+          "transform": "translate(0, 0)"
+        },
+        {
+          "progress": 0.5,
+          "fill": null,
+          "stroke": null,
+          "opacity": null,
+          "strokeWidth": null,
+          "transform": "translate(-32px, 12px)"
+        },
+        {
+          "progress": 1,
+          "fill": null,
+          "stroke": null,
+          "opacity": null,
+          "strokeWidth": null,
+          "transform": "translate(0, 0)"
+        }
+      ]
+    }
+  ]
+}
