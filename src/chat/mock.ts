@@ -116,7 +116,7 @@ const DEFAULT_DETAIL = {
       "promotionColor": {
         "label": "Couleur par defaut de promo",
         "type": "colorpicker",
-        "value": "#222222"
+        "value": "#191419"
       },
       "mentionRegex": {
         "label": "Regex de mention",

@@ -66,7 +66,7 @@ function chooseNextSong() {
 
   if (playlist.length === 1) return playlist[0];
 
-  let unplayed = playlist.filter((p) => playlist.indexOf(p) === -1);
+  let unplayed = playlist.filter((p) => previousSongs.indexOf(p) === -1);
   if (!unplayed.length) {
     const previouslyPlayed = previousSongs[previousSongs.length -1];
     unplayed = playlist.filter((p) => p !== previouslyPlayed);
