@@ -66,6 +66,9 @@ const TITLES = [
   // '[CATEGORIE BEAUCOUP TROP LONGUE] Titre beaucoup trop long également - sans parler du sous-titre qui n\'a aucune chance ce passer !avecUneCommandeEnPlus',
 ]
 
+const OBS_START_SCENE_REGEX = /début/gi;
+let obsCurrentScene = '';
+
 function choose(arr: any[]) {
   const i = Math.floor(Math.random() * arr.length);
   
@@ -162,6 +165,25 @@ function changeMockScene(event: Event) {
   $overlay.classList.add('mock-'+mockScene);
 }
 
+/** OBS Interactions */
+
+function getObsCurrentScene() {
+  if (window.obsstudio) {
+    window.obsstudio.getCurrentScene((scene: OBSSceneInfo) => {
+      obsCurrentScene = scene.name;
+    })
+  }
+}
+
+
+function handleObsSceneChanged(event: CustomEvent<OBSSceneInfo> ) {
+  if (obsCurrentScene && obsCurrentScene.match(OBS_START_SCENE_REGEX)) {
+    forcePresentation();
+  }
+
+  obsCurrentScene = event.detail.name;
+}
+
 function obsStopRecording() {
   const params = getParams();
 
@@ -181,6 +203,7 @@ function obsStartRecording() {
 function refreshControlsStates() {
   const params = getParams();
   const $toggleAutoRecordingButton = document.getElementById('toggle_auto_recording') as HTMLButtonElement;
+  const $toggleInitialPresentationButton = document.getElementById('toggle_initial_presentation') as HTMLButtonElement;
 
   if (params.autoRecording) {
     $toggleAutoRecordingButton.classList.add('active');
@@ -189,12 +212,28 @@ function refreshControlsStates() {
     $toggleAutoRecordingButton.classList.remove('active');
     $toggleAutoRecordingButton.textContent = 'AUTO RECORD: INACTIVE';
   }
+
+  if (params.initialPresentation) {
+    $toggleInitialPresentationButton.classList.add('active');
+    $toggleInitialPresentationButton.textContent = 'INITIAL PRESENTATION: ACTIVE';
+  } else {
+    $toggleInitialPresentationButton.classList.remove('active');
+    $toggleInitialPresentationButton.textContent = 'INITIAL PRESENTATION: INACTIVE';
+  }
 }
 
 function toggleAutoRecording() {
   const params = getParams();
 
   setParam('autoRecording', !params.autoRecording);
+
+  refreshControlsStates();
+}
+
+function toggleInitialPresentation() {
+  const params = getParams();
+
+  setParam('initialPresentation', !params.initialPresentation);
 
   refreshControlsStates();
 }
@@ -208,7 +247,7 @@ document.addEventListener('DOMContentLoaded', () => {
   refreshDateTime();
   setInterval(refreshDateTime, 1000);
   setInterval(refreshUI, 4000);
-  // setInterval(rotateSocials, 10000);
+  setInterval(rotateSocials, 10000);
 
   const $bgVideo = document.getElementById('background_video') as  HTMLVideoElement | null;
   if ($bgVideo) {
@@ -228,6 +267,8 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('force_presentation')?.addEventListener('click', forcePresentation);
   document.getElementById('toggle_presentation')?.addEventListener('click', togglePresentation);
   document.getElementById('toggle_auto_recording')?.addEventListener('click', toggleAutoRecording);
+  document.getElementById('toggle_initial_presentation')?.addEventListener('click', toggleInitialPresentation);
+
   document.getElementById('socials')?.addEventListener('click', rotateSocials);
   document.getElementById('rotate_socials')?.addEventListener('click', rotateSocials);
   document.getElementById('change_title')?.addEventListener('click', changeTitle);
@@ -235,4 +276,12 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('select_mock_scene')?.addEventListener('change', changeMockScene);
 
   document.body.classList.add('--ready');
+
+
+    if (window.obsstudio) {
+      getObsCurrentScene();
+      window.addEventListener('jotabe:forcePresentation', forcePresentation);
+      window.addEventListener('jotabe:nextSocial', rotateSocials);
+      window.addEventListener('obsSceneChanged', handleObsSceneChanged);
+    }
 });

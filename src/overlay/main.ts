@@ -4,6 +4,9 @@ import { connect, getFollowers, getGuests, getStreamTitle, getSubscriptions,  ge
 import './style.css'
 import { getCache, getParams, getSettingsFromQS, setCacheData, setParam } from '../settings';
 
+const OBS_START_SCENE_REGEX = /début/gi;
+let obsCurrentScene = '';
+
 function log(message: string, isError = false) {
   const $log = document.getElementById('log') as HTMLDivElement;
 
@@ -109,6 +112,24 @@ function handleChannelSubscriptionMessage(event: EventSubChannelSubscriptionMess
   log("New Sub Message: " + event.userDisplayName + ': '+event.messageText);
 }
 
+/** OBS Interactions */
+
+function getObsCurrentScene() {
+  if (window.obsstudio) {
+    window.obsstudio.getCurrentScene((scene: OBSSceneInfo) => {
+      obsCurrentScene = scene.name;
+    })
+  }
+}
+
+function handleObsSceneChanged(event: CustomEvent<OBSSceneInfo> ) {
+  if (obsCurrentScene && obsCurrentScene.match(OBS_START_SCENE_REGEX)) {
+    forcePresentation();
+  }
+
+  obsCurrentScene = event.detail.name;
+}
+
 function obsStopRecording() {
   const params = getParams();
 
@@ -138,6 +159,7 @@ function forcePresentation() {
 function refreshControlsStates() {
   const params = getParams();
   const $toggleAutoRecordingButton = document.getElementById('toggle_auto_recording') as HTMLButtonElement;
+  const $toggleInitialPresentationButton = document.getElementById('toggle_initial_presentation') as HTMLButtonElement;
 
   if (params.autoRecording) {
     $toggleAutoRecordingButton.classList.add('active');
@@ -145,6 +167,14 @@ function refreshControlsStates() {
   } else {
     $toggleAutoRecordingButton.classList.remove('active');
     $toggleAutoRecordingButton.textContent = 'AUTO RECORD: INACTIVE';
+  }
+
+  if (params.initialPresentation) {
+    $toggleInitialPresentationButton.classList.add('active');
+    $toggleInitialPresentationButton.textContent = 'INITIAL PRESENTATION: ACTIVE';
+  } else {
+    $toggleInitialPresentationButton.classList.remove('active');
+    $toggleInitialPresentationButton.textContent = 'INITIAL PRESENTATION: INACTIVE';
   }
 }
 
@@ -156,9 +186,15 @@ function toggleAutoRecording() {
   refreshControlsStates();
 }
 
+function toggleInitialPresentation() {
+  const params = getParams();
+
+  setParam('initialPresentation', !params.initialPresentation);
+
+  refreshControlsStates();
+}
+
 async function triggerNextTitle() {
-
-
   try {
     await nextTitle();
     log("Refreshing title...");
@@ -199,10 +235,13 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('socials')?.addEventListener('click', rotateSocials);
   document.getElementById('next_title')?.addEventListener('click', triggerNextTitle);
   document.getElementById('toggle_auto_recording')?.addEventListener('click', toggleAutoRecording);
+  document.getElementById('toggle_initial_presentation')?.addEventListener('click', toggleInitialPresentation);
 
   if (window.obsstudio) {
+    getObsCurrentScene();
     window.addEventListener('jotabe:forcePresentation', forcePresentation);
     window.addEventListener('jotabe:nextSocial', rotateSocials);
     window.addEventListener('jotabe:nextTitle', triggerNextTitle);
+    window.addEventListener('obsSceneChanged', handleObsSceneChanged);
   }
 });

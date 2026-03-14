@@ -141,11 +141,10 @@ export async function revealPresentation(
         presentationPending = true;
 
         $stinger.classList.add("--play");
-        $stinger.play();
-
         const colorscheme = matchColorScheme(category);
         setColorscheme(colorscheme, $presentation);
 
+        $stinger.play(); 
         await waitTimeout(1333);
 
         $presentation?.classList.add("--show");

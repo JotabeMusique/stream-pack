@@ -20,6 +20,7 @@ const settings = {
   },
   params: {
     autoRecording: false,
+    initialPresentation: false,
   }
 }
 
