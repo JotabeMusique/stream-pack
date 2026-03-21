@@ -177,7 +177,9 @@ function getObsCurrentScene() {
 
 
 function handleObsSceneChanged(event: CustomEvent<OBSSceneInfo> ) {
-  if (obsCurrentScene && obsCurrentScene.match(OBS_START_SCENE_REGEX)) {
+  const params = getParams();
+
+  if (obsCurrentScene && obsCurrentScene.match(OBS_START_SCENE_REGEX) && params.initialPresentation) {
     forcePresentation();
   }
 
