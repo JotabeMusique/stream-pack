@@ -1,5 +1,6 @@
 [
   {
+    "name": "twitch",
     "title": "Twitch",
     "description": "Retrouvez mes cours de piano gratuitement les samedis sur Twitch. Connaissez-vous Twitch Prime ?",
     "url": "/jotabemusique",
@@ -7,6 +8,7 @@
     "color": "#9146ff"
   },
   {
+    "name": "discord",
     "title": "Discord",
     "description": "Tu veux rejoindre les cours gratuitement ? Tape <b>!discord</b> dans le chat ou clique sur le lien dans la description.",
     "url": "",
@@ -14,6 +16,7 @@
     "color": "#5865F2"
   },
   {
+    "name": "youtube",
     "title": "YouTube",
     "description": "Retrouve toutes les VODs des cours et bien plus sur ma chaine YouTube",
     "url": "@JotabeMusique",
@@ -21,6 +24,7 @@
     "color": "#ee0f0f"
   },
   {
+    "name": "bluesky",
     "title": "Bluesky",
     "description": "Suis mon actualité sur Bluesky pour te tenir au courant de mes autres activités musicales",
     "url": "@jotabemusique.bsky.social",
@@ -28,6 +32,7 @@
     "color": "#1185FE"
   },
   {
+    "name": "instagram",
     "title": "Instagram",
     "description": "Retrouve mes stories et extraits d'émissions sur mon Instagram",
     "url": "@JotabeMusique",
@@ -35,6 +40,7 @@
     "color": "#C13584"
   },
   {
+    "name": "patreon",
     "title": "Patreon",
     "description": "L'existence de ces cours dépend aussi de votre contribution, les dons récurrents permettent de pérenniser leur gratuité",
     "url": "@JotabeMusique",
@@ -42,6 +48,7 @@
     "color": "#000000"
   },
   {
+    "name": "paypal",
     "title": "PayPal",
     "description": "Vous pouvez aussi faire un don ponctuel via PayPal pour me soutenir",
     "url": "paypal.me/@JotabeMusique",

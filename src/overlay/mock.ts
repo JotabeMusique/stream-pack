@@ -1,7 +1,9 @@
 import { forceRevealPresentation, preloadNextPresentationBackground, refreshDateTime, rotateSocials, setColorscheme, setGuests, setTileUserValue, setTileValue, setTitle } from './ui';
 
+import '../assets/icons/style.css';
 import './style.css';
 import './mock.css';
+
 import { getParams, setParam } from '../settings';
 
 const USERNAMES = [
@@ -27,6 +29,7 @@ const GUESTS = [
 ];
 
 const TITLES = [
+  '[CONTREBANDE SONORE] Session #01 - Le thème de l\'émission',
   '[PROMO 2026] Cours n°1 - Découverte du piano',
   '[PROMO 2025] Cours n°6 - Le Château dans le Ciel - Laputa',
   '[PROMO 2025] Cours n°10 - Kingdom Hearts - Other Promise',

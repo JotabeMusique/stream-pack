@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Anton+SC&display=swap');
 
 html, body {
   margin: 0;
@@ -99,11 +99,12 @@ header {
   font-family: var(--display-font-family);
   font-size: 48px;
   padding: 0 calc(var(--height) * var(--separator-slant) + 8px) 4px 16px;
-
+  line-height: 1.1;
   display: flex;
   align-items: center;
   flex-grow: 0;
   flex-shrink: 0;
+  flex-basis: min-content;
   max-width: calc(50% + var(--height) * var(--separator-slant));
   white-space: nowrap;
   text-overflow: clip;
@@ -112,6 +113,11 @@ header {
   margin-top: 0;
   opacity: 1;
   transition: margin var(--transition-duration) ease, opacity var(--transition-duration) ease;
+}
+
+.headingCategory.--multiline {
+  font-size: 32px;
+  white-space: wrap;
 }
 
 .headingTitle {
@@ -524,10 +530,7 @@ footer .tile-value--withAmount {
   align-items: center;
 
   height: var(--height);
-  margin-left: -1em;
-  padding-right: 0.2em;
-  border-bottom-left-radius: 1em;
-  
+
   background: var(--primary-background);
   color: var(--primary-text);
   
@@ -538,8 +541,19 @@ footer .tile-value--withAmount {
   transition: background-color var(--transition-duration) ease, color var(--transition-duration) ease;
 }
 
+.tile-left + .tile-label {
+  padding-right: 0.2em;
+  border-bottom-left-radius: 1em;
+  margin-left: -1em;
+}
+
 .tile-label img {
   width: calc(var(--height) * 0.5);
+}
+
+.tile-label .icon {
+  font-size: calc(var(--height) * 0.5);
+  transition: color ease 0.5s;
 }
 
 .tile-label + .tile-right path {
@@ -685,6 +699,7 @@ footer .tile-value--withAmount {
   transition: border-color var(--transition-duration) ease;
 }
 
+
 .tile.--blinded .tile-blindText {
   width: calc(100% - var(--height) * var(--separator-slant) );
 }
@@ -696,6 +711,15 @@ footer .tile-value--withAmount {
 .tile.--blinded .tile-value {
   width: var(--previousWidth);
 }
+
+.tile.--blinded .tile-label .icon {
+  background: var(--shimmer) -128px 0 / 128px 128px repeat border-box;
+  background-clip: text;
+  background-position: 0 0;
+  color: transparent;
+  animation: textShimmer 2s 2 none ease-in-out;
+}
+
 
 .tile.--hiding .tile-value {
   width: auto;
@@ -837,15 +861,14 @@ footer .tile-value--withAmount {
   max-width: 1600px;
   font-size: 128px;
   margin-right: auto;
-  margin-left: -96px;
   overflow: hidden;
 }
 
 #presentationCategory {
   font-family: var(--display-font-family);
-  margin-left: -0.4em;
-  border-bottom-left-radius: 0.4em;
   font-weight: 500;
+  padding-left: 0.4em;
+  padding-right: 0.2em;
   white-space: nowrap;
   overflow: hidden;
 }
@@ -914,6 +937,56 @@ footer .tile-value--withAmount {
 }
 #presentation.--show #presentationContent {
   display: flex;
+}
+
+/* COLOR SCHEME SPECIFICS */
+
+@keyframes blink {
+  0% { color: currentColor; }
+  7% { color: transparent; }
+  7.5% { color: currentColor; }
+  18% { color: transparent; }
+  18.7% { color: currentColor; filter: invert(); }
+  20% { color: transparent; }
+  22.1% { color: currentColor; filter: none; }
+  73% { color: transparent; }
+  74.2% { color: currentColor; }
+  95% { color: transparent; filter: invert()}
+  95.8% { color: currentColor; filter: none; }
+}
+
+
+@keyframes scrollBg {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 -100%; }
+}
+
+
+.colorscheme-contrebande .headingCategory {
+  font-family: 'Anton SC', sans-serif;
+  text-transform: uppercase;
+}
+
+.colorscheme-contrebande #presentationCategory {
+  font-family: 'Anton SC', sans-serif;
+  text-transform: uppercase;
+}
+
+.colorscheme-contrebande #presentationBackgroundImage {
+  filter: grayscale(100%) brightness(30%) contrast(140%);
+}
+
+
+.colorscheme-contrebande #category {
+  background-image: url('../assets/glitch.gif');
+  background-clip: text;
+  background-size: 128px;
+
+  animation: blink 11s step-end infinite, scrollBg 2.11s linear infinite;
+}
+
+.colorscheme-contrebande #socials.patreon #socialLink {
+  --linkColor: #fff;
 }
 
 /* DEBUG OVERLAY PAGE */

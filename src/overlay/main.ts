@@ -1,7 +1,9 @@
 import { forceRevealPresentation, preloadNextPresentationBackground, refreshDateTime, rotateSocials, setGuests, setTileUserValue, setTileValue, setTitle } from './ui';
 import { connect, getFollowers, getGuests, getStreamTitle, getSubscriptions,  getViewersCount, nextTitle, onChannelFollow, onChannelSubscription, onChannelSubscriptionGift, onChannelSubscriptionMessage, onChannelUpdate, type EventSubChannelFollowEvent, type EventSubChannelSubscriptionEvent, type EventSubChannelSubscriptionGiftEvent, type EventSubChannelSubscriptionMessageEvent, type EventSubChannelUpdateEvent } from './twitch';
 
-import './style.css'
+import '../assets/icons/style.css';
+import './style.css';
+
 import { getCache, getParams, getSettingsFromQS, setCacheData, setParam } from '../settings';
 
 const OBS_START_SCENE_REGEX = /début/gi;

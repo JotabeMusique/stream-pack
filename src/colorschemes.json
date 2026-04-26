@@ -100,5 +100,27 @@
       "background": "#e06020",
       "text": "#ffffff"
     }
+  },
+  "contrebande": {
+    "base": {
+      "background": "#ffffff",
+      "text": "#191419"
+    },
+    "accent": {
+      "background": "#323232",
+      "text": "#1F9924"
+    },
+    "neutral": {
+      "background": "#242424",
+      "text": "#ffffff"
+    },
+    "primary": {
+      "background": "#191919",
+      "text": "#1F9924"
+    },
+    "secondary": {
+      "background": "#191919",
+      "text": "#1F9924"
+    }
   }
 }

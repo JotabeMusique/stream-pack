@@ -21,6 +21,7 @@ export const COLORSCHEME_MATCH = [
   { regex: /2024/, colorscheme: 'promo2024'},
   { regex: /2025/, colorscheme: 'promo2025'},
   { regex: /2026/, colorscheme: 'promo2026'},
+  { regex: /contrebande/i, colorscheme: 'contrebande'},
 ];
 
 export const PRESENTATION_MATCH = [
@@ -31,6 +32,7 @@ export const PRESENTATION_MATCH = [
   { regex: /2025/, stinger: 'stinger-2025'},
   { regex: /2026/, stinger: 'stinger-2020'},
   { regex: /inter-?promo/i, stinger: 'stinger-interpromo'},
+  { regex: /contrebande/i, stinger: 'stinger-contrebande'},
 ]
 
 

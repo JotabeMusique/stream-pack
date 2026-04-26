@@ -39,6 +39,12 @@ export function setColorscheme(
 ) {
   if (!$element) return;
 
+  $element.classList.forEach((c) => {
+    if (c.startsWith('colorscheme-')) {
+      $element.classList.remove(c);
+    }
+  })
+
   if (colorschemeName in colorschemes) {
     const name = colorschemeName as keyof typeof colorschemes;
     const colorscheme = colorschemes[name] as ColorScheme;
@@ -85,6 +91,8 @@ export function setColorscheme(
       colorscheme.neutral?.background ?? colorschemes.default.neutral.background
     );
   }
+
+  $element.classList.add('colorscheme-'+colorschemeName);
 }
 
 async function waitTimeout(timeMs: number) {
@@ -202,7 +210,15 @@ export async function setTitle(title: string, options: SetTitleOptions = {}) {
   currentTitle = title;
 
   if (options.skipTransition) {
-    if ($category) $category.innerHTML = titleCase(values.category ?? "");
+    if ($category) {
+      $category.innerHTML = '<span>'+titleCase(values.category ?? "")+'</span>';
+      if (values.category && values.category.length > 16) {
+        $category.classList.add('--multiline');
+      } else {
+        $category.classList.remove('--multiline');
+      }
+    }
+
     if ($title) $title.innerHTML = highlightMentions(values.title) ?? "";
     if ($subtitle) $subtitle.innerHTML = values.subtitle ?? "";
 
@@ -214,6 +230,7 @@ export async function setTitle(title: string, options: SetTitleOptions = {}) {
 
     const colorscheme = matchColorScheme(values.category);
 
+    console.log(values.category, colorscheme)
     setColorscheme(colorscheme);
 
     return;
@@ -234,7 +251,14 @@ export async function setTitle(title: string, options: SetTitleOptions = {}) {
 
   setTimeout(
     () => {
-      if ($category) $category.innerHTML = titleCase(values.category ?? "");
+      if ($category) {
+        $category.innerHTML = titleCase(values.category ?? "");
+        if (values.category && values.category.length > 16) {
+          $category.classList.add('--multiline');
+        } else {
+          $category.classList.remove('--multiline');
+        }
+      }
       if ($title) $title.innerHTML = highlightMentions(values.title) ?? "";
       if ($subtitle) $subtitle.innerHTML = values.subtitle ?? "";
 
@@ -326,20 +350,23 @@ export function setSocials(social: SocialInfo) {
   const $link = document.getElementById("socialLink");
   const $icon = document.getElementById("socialIcon");
 
-  $socials?.classList.add("--hiding");
+  if ($socials) {
+    $socials.classList.add("--hiding");
+  }
 
   setTimeout(() => {
     if ($title) $title.innerHTML = social.title ?? "";
     if ($description) $description.innerHTML = social.description ?? "";
     if ($link) $link.innerHTML = social.url ?? "";
     if ($icon) $icon.innerHTML = `<img src="${ICONS_PATH + social.icon}" />`;
-
-    $socials?.classList.remove("--hiding");
-    $socials?.style.setProperty("--socialColor", social.color);
-    $socials?.style.setProperty(
-      "--linkColor",
-      social.linkColor ?? social.color
-    );
+    if ($socials) {
+      $socials.className = social.name
+      $socials.style.setProperty("--socialColor", social.color);
+      $socials.style.setProperty(
+        "--linkColor",
+        social.linkColor ?? social.color
+      );
+    }
   }, 750);
 }
 

@@ -6,6 +6,7 @@ export type StreamTitleInfo = {
 }
 
 export type SocialInfo = {
+  name: string;
   title: string;
   description: string;
   url: string;
